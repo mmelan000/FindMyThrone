@@ -5,30 +5,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <title>Find My Throne</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="icon" type="image/png" href="./assets/images/toilet.png" />
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>    
+    <script src="https://kit.fontawesome.com/0586516412.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./assets/css/style.css">
     <!-- <script type="module" src="./index.js"></script> -->
     <title>Document</title>
 </head>
 
 <body>
-    <header>
-        <h1>Number Two App on the Web</h1>
-    </header>
+    <h1 class="has-text-weight-bold is-large">Number Two App on the Web</h1>
     <hr>
     <main>
         <section id="search-bar">
             <input placeholder="Philadelphia, PA" id="form">
+            <span class="icon is-small is-left">
+                <i class="fa-solid fa-toilet"></i>
+              </span>
             <button id="submit">Search</button>
         </section>
         <hr>
+        
         <div id="map"></div>
-
         <hr>
+        
         <section id="locations">
             test 3
         </section>
         <hr>
+        
     </main>
     <script
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYtyNqtzqQ6Ni4aB_yASKG_uXHa0_amuE&callback=initMap&v=weekly"

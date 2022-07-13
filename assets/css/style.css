@@ -1,7 +1,24 @@
+
+body {
+    background-color: #8F5C38;
+}
+
+h1 {
+    color: #FFD449;
+}
+
+#submit {
+    color: #104911; 
+}
+
 #map {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;    
     height: 50vh;
     width: 100%;
-  }
+}
+
 .custom-map-control-button {
     background-color: #fff;
     border: 0;
@@ -17,3 +34,4 @@
   .custom-map-control-button:hover {
     background: rgb(235, 235, 235);
   }
+
