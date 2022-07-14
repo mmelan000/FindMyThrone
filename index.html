@@ -5,45 +5,58 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Find My Throne</title>
+    <title>FindMyThrone</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="icon" type="image/png" href="./assets/images/toilet.png" />
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Fira+Code&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/0586516412.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./assets/css/style.css">
-    <!-- <script type="module" src="./index.js"></script> -->
-    <title>Document</title>
+    <link rel="icon" type="image/png" href="./assets/images/toilet.png" />
 </head>
 
 <body>
-    <h1 class="has-text-weight-bold is-large">Number Two App on the Web</h1>
-    <hr>
-<main>
-        <section id="search-bar">
-            <input placeholder="Philadelphia, PA" id="form">
-            <span class="icon is-small is-left">
-                <i class="fa-solid fa-toilet"></i>
-              </span>
-            <button id="submit">Search</button>
-            <button></button>
-        </section>
-        <hr>
+    <div class="container" id="page">
+       <header class="has-text-centered">
+            <h1 class="container-fluid is-size-1">FindMyThrone</h1>
+       </header>
+    <div class="columns is-centered has-text-centered">
+        <!--Search bar-->
+        <div class="column is-half">
+            <div class="field">
+                <p class="control has-icons-left has-icons-right">
+                  <input class="input" type="text" placeholder="Where we at?">
+                  <span class="icon is-small is-left">
+                    <i class="fa-solid fa-toilet"></i>
+                  </span>
+                </p>
+              </div>
+            <div class="row hidden" id="recent">
+                <p>Local Loos:</p>
+                    <ul>
+                        <li id="Result1">#1</li>
+                        <li id="Result2">#2</li>
+                        <li id="Result3">#3</li>
+                        <li id="Result4">#4</li>
+                        <li id="Result5">#5</li>
+                    </ul>
+            </div>
+        </div>
         
-        <div id="map"></div>
-        <hr>
-        
-        <section id="locations">
-            test 3
-        </section>
-        <hr>
-        
-    </main>
+
+       
+
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYtyNqtzqQ6Ni4aB_yASKG_uXHa0_amuE&callback=initMap&v=weekly"
         defer></script>
     <script src="./assets/javascript/script.js"></script>
-    <label>
+    <label class="has-text-centered">
         <p id="theSquad">Thanks for using the app</p>
         <a href>The Marvelous Breakfast Squad</a>
     </label>

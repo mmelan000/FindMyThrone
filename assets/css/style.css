@@ -1,37 +1,45 @@
-
 body {
-    background-color: #8F5C38;
+    background-color: burlywood;
+    min-height: 100vh;
+    font-family: 'Fira Code', monospace;
 }
 
-h1 {
-    color: #FFD449;
+.hidden {
+    /*display: none;*/
 }
 
-#submit {
-    color: #104911; 
+.is-one-third {
+    justify-content: center;
 }
 
-#map {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;    
-    height: 50vh;
-    width: 100%;
+header {
+    font-family: 'Audiowide', cursive;
+    color: brown;
+    padding-bottom: 10px;
+    padding-top: 10px;
 }
 
-.custom-map-control-button {
-    background-color: #fff;
-    border: 0;
-    border-radius: 2px;
-    box-shadow: 0 1px 4px -1px rgba(0, 0, 0, 0.3);
-    margin: 10px;
-    padding: 0 0.5em;
-    font: 400 18px Roboto, Arial, sans-serif;
-    overflow: hidden;
-    height: 40px;
-    cursor: pointer;
-  }
-  .custom-map-control-button:hover {
-    background: rgb(235, 235, 235);
-  }
+#Result1 {
+    color: brown;
+}
 
+#Result2 {
+    color: orangered;
+}
+
+#Result3 {
+    color: yellow;
+}
+
+#Result4 {
+    color: green;
+}
+
+#Result5 {
+    color: black;
+}
+
+#recent p {
+    color: brown;
+    font-weight: 700;
+}
