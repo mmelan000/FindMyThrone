@@ -1,3 +1,6 @@
+* {
+    cursor: url(https://cur.cursors-4u.net/others/oth-3/oth223.cur), auto !important;
+}
 
 body {
     background-color: burlywood;
@@ -7,12 +10,52 @@ body {
     padding-right: 5px;
 }
 
-.hidden {
-    /*display: none;*/
+h1 {
+    font-family: 'Audiowide', cursive;
+    color: brown; 
 }
+
+.button {
+    margin-top: 5px;
+    font-weight: 700;
+}
+
+.custom-map-control-button {
+    background-color: #fff;
+    border: 0;
+    border-radius: 2px;
+    box-shadow: 0 1px 4px -1px rgba(0, 0, 0, 0.3);
+    margin: 10px;
+    padding: 0 0.5em;
+    font: 400 18px Roboto, Arial, sans-serif;
+    overflow: hidden;
+    height: 40px;
+    cursor: pointer;
+  }
+  
+  .custom-map-control-button:hover {
+    background: rgb(235, 235, 235);
+  }
 
 .is-one-third {
     justify-content: center;
+}
+
+#local {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: x-large; 
+    font-weight: bolder;
+    color: brown;
+}
+
+#map {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;    
+    height: 50vh;
+    width: 100%;
+    border-radius: 5px;
 }
 
 #result1 {
@@ -45,75 +88,6 @@ body {
     border: solid 2px black;
 }
 
-h1 {
-    color: #FFD449;
-}
-
 #submit {
     color: #104911; 
-}
-
-#map {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;    
-    height: 50vh;
-    width: 100%;
-}
-
-.custom-map-control-button {
-    background-color: #fff;
-    border: 0;
-    border-radius: 2px;
-    box-shadow: 0 1px 4px -1px rgba(0, 0, 0, 0.3);
-    margin: 10px;
-    padding: 0 0.5em;
-    font: 400 18px Roboto, Arial, sans-serif;
-    overflow: hidden;
-    height: 40px;
-    cursor: pointer;
-  }
-  
-  .custom-map-control-button:hover {
-    background: rgb(235, 235, 235);
-  }
-
- {cursor: url(https://cur.cursors-4u.net/others/oth-3/oth223.cur), auto !important;}
-
-#local {
-    margin-top: 5px;
-    margin-bottom: 5px;
-    font-size: x-large; 
-    font-weight: bolder;
-    color: brown;
-
-}
-
-#map {
-    height: 50vh;
-    width: 100%;
-    border-radius: 5px;
-  }
-
-.custom-map-control-button {
-    background-color: #fff;
-    border: 0;
-    border-radius: 2px;
-    box-shadow: 0 1px 4px -1px rgba(0, 0, 0, 0.3);
-    margin: 10px;
-    padding: 0 0.5em;
-    font: 400 18px Roboto, Arial, sans-serif;
-    overflow: hidden;
-    height: 40px;
-    cursor: pointer;
-  }
-
-  .custom-map-control-button:hover {
-    background: rgb(235, 235, 235);
-  }
-
-.button {
-    margin-top: 5px;
-    font-weight: 700;
-
 }
