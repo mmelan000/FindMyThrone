@@ -58,33 +58,29 @@ h1 {
     border-radius: 5px;
 }
 
-#result1 {
+.result {
     margin-top: 5px;
     margin-bottom: 5px;
+    width: 100%;
+}
+
+#result1 {
     border: solid 2px brown;
 }
 
 #result2 {
-    margin-top: 5px;
-    margin-bottom: 5px;
     border: solid 2px orangered;
 }
 
 #result3 {
-    margin-top: 5px;
-    margin-bottom: 5px;
     border: solid 2px yellow;
 }
 
 #result4 {
-    margin-top: 5px;
-    margin-bottom: 5px;
     border: solid 2px green;
 }
 
 #result5 {
-    margin-top: 5px;
-    margin-bottom: 5px;
     border: solid 2px black;
 }
 
