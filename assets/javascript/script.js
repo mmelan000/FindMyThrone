@@ -1,5 +1,34 @@
 let map, infoWindow;
 var gottaGo = document.querySelector('#custom-map-control-button');
+var docRecent = document.querySelector('#recent');
+
+function appendData (input) {
+  console.log(input);
+
+  for (var i = 0; i < input.length; i++) {
+  var createCard = document.createElement('div');
+  var createCardName = document.createElement('h3');
+  var createCardLocation = document.createElement('p');
+  var createCardRating = document.createElement('p');
+  var ratingTotal = input[i].upvote+input[i].downvote;
+  var rating = input[i].upvote/ratingTotal;
+    console.log(rating);
+
+  createCardName.textContent = 'Name: ' + input[i].name;
+  createCardLocation.textContent = 'Location: ' + input[i].street + ', ' + input[i].city;
+  if (!rating) {
+    createCardRating.textContent = 'Rating: Unrated';
+  } else {
+  createCardRating.textContent = 'Rating: ' + rating;
+  }
+
+  createCard.appendChild(createCardName);
+  createCard.appendChild(createCardLocation);
+  createCard.appendChild(createCardRating);
+  docRecent.appendChild(createCard);
+  
+}
+}
 
 // calls restroom API data
 function getRestroomAPI(lat, lon) {
@@ -8,6 +37,7 @@ function getRestroomAPI(lat, lon) {
       return response.json();
     })
     .then(function (data) {
+      appendData(data);
       console.log(data);
     })
 }
@@ -19,7 +49,7 @@ function initMap() {
   });
   infoWindow = new google.maps.InfoWindow();
 }
-
+// centers map and calls getRestoomAPI
 function centerMap() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(
@@ -44,7 +74,7 @@ function centerMap() {
     handleLocationError(false, infoWindow, map.getCenter());
   }
 }
-
+// issues error for failed geolocation
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
   infoWindow.setPosition(pos);
   infoWindow.setContent(
