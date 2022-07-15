@@ -29,6 +29,7 @@ function appendData (input) {
   } else {
   createCardRating.textContent = 'Rating: ' + rating;
   }
+  createCard.id = 'result' + (i+1);
 
   createCard.appendChild(createCardName);
   createCard.appendChild(createCardLocation);
