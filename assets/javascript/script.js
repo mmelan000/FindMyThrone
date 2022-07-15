@@ -10,33 +10,32 @@ var poopJokesArray = ['Bake a loaf', 'Barbarians at the gate', 'Blow Mud', 'Bomb
                       'Let the turtles loose', 'Make underwater sculptures', 'Glassing the surface', 'Unload some timber', 'Plant a tree']
 
 
-function appendData (input) {
+// appends cards to #recent
+function appendData(input) {
   console.log(input);
 
   for (var i = 0; i < input.length; i++) {
-  var createCard = document.createElement('div');
-  var createCardName = document.createElement('h3');
-  var createCardLocation = document.createElement('p');
-  var createCardRating = document.createElement('p');
-  var ratingTotal = input[i].upvote+input[i].downvote;
-  var rating = input[i].upvote/ratingTotal;
+    var createCard = document.createElement('div');
+    var createCardName = document.createElement('h3');
+    var createCardLocation = document.createElement('p');
+    var createCardRating = document.createElement('p');
+    var ratingTotal = input[i].upvote + input[i].downvote;
+    var rating = input[i].upvote / ratingTotal;
     console.log(rating);
 
-  createCardName.textContent = 'Name: ' + input[i].name;
-  createCardLocation.textContent = 'Location: ' + input[i].street + ', ' + input[i].city;
-  if (!rating) {
-    createCardRating.textContent = 'Rating: Unrated';
-  } else {
-  createCardRating.textContent = 'Rating: ' + rating;
-  }
-  createCard.id = 'result' + (i+1);
+    createCardName.textContent = 'Name: ' + input[i].name;
+    createCardLocation.textContent = 'Location: ' + input[i].street + ', ' + input[i].city;
+    if (!rating) {
+      createCardRating.textContent = 'Rating: Unrated';
+    } else {
+      createCardRating.textContent = 'Rating: ' + rating;
+    }
 
-  createCard.appendChild(createCardName);
-  createCard.appendChild(createCardLocation);
-  createCard.appendChild(createCardRating);
-  docRecent.appendChild(createCard);
-  
-}
+    createCard.appendChild(createCardName);
+    createCard.appendChild(createCardLocation);
+    createCard.appendChild(createCardRating);
+    docRecent.appendChild(createCard);
+  }
 }
 
 // calls restroom API data
