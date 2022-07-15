@@ -30,7 +30,6 @@ function appendData(input) {
     } else {
       createCardRating.textContent = 'Rating: ' + rating;
     }
-
     createCard.appendChild(createCardName);
     createCard.appendChild(createCardLocation);
     createCard.appendChild(createCardRating);
