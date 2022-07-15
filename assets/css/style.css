@@ -12,7 +12,7 @@ body {
 
 h1 {
     font-family: 'Audiowide', cursive;
-    color: brown; 
+    color: brown;
 }
 
 .button {
@@ -31,11 +31,11 @@ h1 {
     overflow: hidden;
     height: 40px;
     cursor: pointer;
-  }
-  
-  .custom-map-control-button:hover {
+}
+
+.custom-map-control-button:hover {
     background: rgb(235, 235, 235);
-  }
+}
 
 .is-one-third {
     justify-content: center;
@@ -44,7 +44,7 @@ h1 {
 #local {
     margin-top: 5px;
     margin-bottom: 5px;
-    font-size: x-large; 
+    font-size: x-large;
     font-weight: bolder;
     color: brown;
 }
@@ -52,7 +52,7 @@ h1 {
 #map {
     display: block;
     margin-left: auto;
-    margin-right: auto;    
+    margin-right: auto;
     height: 50vh;
     width: 100%;
     border-radius: 5px;
@@ -89,7 +89,5 @@ h1 {
 }
 
 #submit {
-    color: #104911; 
+    color: #104911;
 }
-
-/*for Jesse!
