@@ -23,11 +23,16 @@ function appendData (input) {
 
     createCardName.textContent = 'Name: ' + input[i].name;
     createCardLocation.textContent = 'Location: ' + input[i].street + ', ' + input[i].city;
-    if (!rating) {
+    if (rating === 0) {
+      createCardRating.textContent = 'Rating: 0%';
+    } else if (!rating) {
       createCardRating.textContent = 'Rating: Unrated';
     } else {
-      createCardRating.textContent = 'Rating: ' + rating;
+      createCardRating.textContent = 'Rating: ' + rating*100 + '%';
     }
+
+    createCard.setAttribute('class', 'result')
+    createCard.setAttribute('id', 'result' + (i+1));
     createCard.appendChild(createCardName);
     createCard.appendChild(createCardLocation);
     createCard.appendChild(createCardRating);
