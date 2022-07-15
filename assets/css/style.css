@@ -1,53 +1,24 @@
+
 body {
-    background-color: burlywood;
-    min-height: 100vh;
-    font-family: 'Fira Code', monospace;
+    background-color: #8F5C38;
 }
 
-.hidden {
-    /*display: none;*/
+h1 {
+    color: #FFD449;
 }
 
-.is-one-third {
-    justify-content: center;
-}
-
-header {
-    font-family: 'Audiowide', cursive;
-    color: brown;
-    padding-bottom: 10px;
-    padding-top: 10px;
-}
-
-#Result1 {
-    color: brown;
-}
-
-#Result2 {
-    color: orangered;
-}
-
-#Result3 {
-    color: yellow;
-}
-
-#Result4 {
-    color: green;
-}
-
-#Result5 {
-    color: black;
-}
-
-#recent p {
-    color: brown;
-    font-weight: 700;
+#submit {
+    color: #104911; 
 }
 
 #map {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;    
     height: 50vh;
     width: 100%;
-  }
+}
+
 .custom-map-control-button {
     background-color: #fff;
     border: 0;
@@ -63,3 +34,12 @@ header {
   .custom-map-control-button:hover {
     background: rgb(235, 235, 235);
   }
+
+/* Start https://www.cursors-4u.com */ *
+ {cursor: url(https://cur.cursors-4u.net/others/oth-3/oth223.cur), auto !important;}
+  /* End https://www.cursors-4u.com */
+
+#recent p {
+    color: brown;
+    font-weight: 700;
+}
