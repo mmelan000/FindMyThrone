@@ -1,33 +1,38 @@
 let map, infoWindow;
 var gottaGo = document.querySelector('#custom-map-control-button');
 var docRecent = document.querySelector('#recent');
+var poopJokesArray = ['Bake a loaf', 'Barbarians at the gate', 'Blow Mud', 'Bomb the Bowl', 'Chop a log', 'Cook a butt burrito', 'Curl some pipe', 'Do the Royal Squat', 'Doo the doo', 'Drop the kids off at the pool',
+                      'Dump a stump', 'Fill the peanut butter jar', 'Float a trout', 'Grow a Tail', 'Launch a Butt Shuttle', 'Launch a torpedo', 'Lay a brick', 'Make a deposit at the porcelain bank', 'Log an entry',
+                      'Make room for lunch', 'Offload some freight', 'Pack your underwear', 'Paint the bowl', 'Park some bark', 'Pinch a loaf', 'Plant some corn', "Poke the turtle's head out", "I'm Prairie Dogging", 
+                      'Punish the porcelain', 'Recycle fiber', 'Release your payload', 'Seek revenge for the Brown Bomber', 'Sink the Bismark', 'Sit on the throne', 'Squeeze the cheese', 'Take the Browns to the Superbowl',
+                      'Bust a grumpy', 'Build a log cabin', "Make like Snoop and 'Drop it like it's hot'", 'Unloose the caboose', 'Go see a man about a horse', 'Murder a brown snake', 'Download some software',
+                      'Drop some potatoes in the crock pot', 'Craft a fudge pop', 'Release the Kraken', 'Get something down on paper', 'A brown dog is scratching at the back door', 'Liberate the brown trout', 
+                      'Let the turtles loose', 'Make underwater sculptures', 'Glassing the surface', 'Unload some timber', 'Plant a tree']
 
 function appendData (input) {
   docRecent.innerHTML = '';
-  
+
   for (var i = 0; i < input.length; i++) {
-  var createCard = document.createElement('div');
-  var createCardName = document.createElement('h3');
-  var createCardLocation = document.createElement('p');
-  var createCardRating = document.createElement('p');
-  var ratingTotal = input[i].upvote+input[i].downvote;
-  var rating = input[i].upvote/ratingTotal;
+    var createCard = document.createElement('div');
+    var createCardName = document.createElement('h3');
+    var createCardLocation = document.createElement('p');
+    var createCardRating = document.createElement('p');
+    var ratingTotal = input[i].upvote + input[i].downvote;
+    var rating = input[i].upvote / ratingTotal;
     console.log(rating);
 
-  createCardName.textContent = 'Name: ' + input[i].name;
-  createCardLocation.textContent = 'Location: ' + input[i].street + ', ' + input[i].city;
-  if (!rating) {
-    createCardRating.textContent = 'Rating: Unrated';
-  } else {
-  createCardRating.textContent = 'Rating: ' + rating;
+    createCardName.textContent = 'Name: ' + input[i].name;
+    createCardLocation.textContent = 'Location: ' + input[i].street + ', ' + input[i].city;
+    if (!rating) {
+      createCardRating.textContent = 'Rating: Unrated';
+    } else {
+      createCardRating.textContent = 'Rating: ' + rating;
+    }
+    createCard.appendChild(createCardName);
+    createCard.appendChild(createCardLocation);
+    createCard.appendChild(createCardRating);
+    docRecent.appendChild(createCard);
   }
-
-  createCard.appendChild(createCardName);
-  createCard.appendChild(createCardLocation);
-  createCard.appendChild(createCardRating);
-  docRecent.appendChild(createCard);
-  
-}
 }
 
 // calls restroom API data
@@ -85,6 +90,12 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
   infoWindow.open(map);
 }
 
+function poopJokesButton () {
+  gottaGo.textContent = poopJokesArray[Math.floor(Math.random() * poopJokesArray.length)];
+}
+
 window.initMap = initMap;
+poopJokesButton();
+
 
 gottaGo.addEventListener('click', centerMap);
