@@ -19,7 +19,7 @@ function appendData (input) {
   if (!rating) {
     createCardRating.textContent = 'Rating: Unrated';
   } else {
-  createCardRating.textContent = 'Rating: ' + rating;
+  createCardRating.textContent = 'Rating: ' + rating*100 + '%';
   }
 
   createCard.appendChild(createCardName);
