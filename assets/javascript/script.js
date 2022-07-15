@@ -9,6 +9,7 @@ var poopJokesArray = ['Bake a loaf', 'Barbarians at the gate', 'Blow Mud', 'Bomb
                       'Drop some potatoes in the crock pot', 'Craft a fudge pop', 'Release the Kraken', 'Get something down on paper', 'A brown dog is scratching at the back door', 'Liberate the brown trout', 
                       'Let the turtles loose', 'Make underwater sculptures', 'Glassing the surface', 'Unload some timber', 'Plant a tree']
 
+// appends api call into cards
 function appendData (input) {
   docRecent.innerHTML = '';
 
@@ -39,7 +40,6 @@ function appendData (input) {
     docRecent.appendChild(createCard);
   }
 }
-
 // calls restroom API data
 function getRestroomAPI(lat, lon) {
   fetch('https://www.refugerestrooms.org/api/v1/restrooms/by_location?page=1&per_page=5&offset=0&lat=' + lat + '&lng=' + lon)
@@ -94,7 +94,7 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
   );
   infoWindow.open(map);
 }
-
+// give random pun to near me button
 function poopJokesButton () {
   gottaGo.textContent = poopJokesArray[Math.floor(Math.random() * poopJokesArray.length)];
 }

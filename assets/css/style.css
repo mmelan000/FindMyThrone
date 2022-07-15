@@ -41,6 +41,20 @@ h1 {
     justify-content: center;
 }
 
+.result {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 100%;
+}
+
+.result>h3{
+    border: 1px solid black;
+}
+
+.result>p{
+    border: 1px solid black;
+}
+
 #local {
     margin-top: 5px;
     margin-bottom: 5px;
@@ -56,12 +70,6 @@ h1 {
     height: 50vh;
     width: 100%;
     border-radius: 5px;
-}
-
-.result {
-    margin-top: 5px;
-    margin-bottom: 5px;
-    width: 100%;
 }
 
 #result1 {
