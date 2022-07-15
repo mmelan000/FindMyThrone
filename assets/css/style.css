@@ -1,3 +1,6 @@
+* {
+    cursor: url(https://cur.cursors-4u.net/others/oth-3/oth223.cur), auto !important;
+}
 
 body {
     background-color: burlywood;
@@ -7,50 +10,43 @@ body {
     padding-right: 5px;
 }
 
-.hidden {
-    /*display: none;*/
+h1 {
+    font-family: 'Audiowide', cursive;
+    color: brown; 
 }
 
 .is-one-third {
     justify-content: center;
 }
 
-
-
-
-
-#Result1 {
+#result1 {
     margin-top: 5px;
     margin-bottom: 5px;
     border: solid 2px brown;
 }
 
-#Result2 {
+#result2 {
     margin-top: 5px;
     margin-bottom: 5px;
     border: solid 2px orangered;
 }
 
-#Result3 {
+#result3 {
     margin-top: 5px;
     margin-bottom: 5px;
     border: solid 2px yellow;
 }
 
-#Result4 {
+#result4 {
     margin-top: 5px;
     margin-bottom: 5px;
     border: solid 2px green;
 }
 
-#Result5 {
+#result5 {
     margin-top: 5px;
     margin-bottom: 5px;
     border: solid 2px black;
-}
-
-h1 {
-    color: #FFD449;
 }
 
 #submit {
@@ -76,15 +72,11 @@ h1 {
     overflow: hidden;
     height: 40px;
     cursor: pointer;
-  }
-  .custom-map-control-button:hover {
+}
+
+.custom-map-control-button:hover {
     background: rgb(235, 235, 235);
-  }
-
-/* Start https://www.cursors-4u.com */ *
- {cursor: url(https://cur.cursors-4u.net/others/oth-3/oth223.cur), auto !important;}
-  /* End https://www.cursors-4u.com */
-
+}
 
 #local {
     margin-top: 5px;
@@ -92,7 +84,6 @@ h1 {
     font-size: x-large; 
     font-weight: bolder;
     color: brown;
-
 }
 
 #map {
@@ -120,7 +111,6 @@ h1 {
 
 .button {
     margin-top: 5px;
-=======
     font-weight: 700;
 
 }
