@@ -9,10 +9,8 @@ var poopJokesArray = ['Bake a loaf', 'Barbarians at the gate', 'Blow Mud', 'Bomb
                       'Drop some potatoes in the crock pot', 'Craft a fudge pop', 'Release the Kraken', 'Get something down on paper', 'A brown dog is scratching at the back door', 'Liberate the brown trout', 
                       'Let the turtles loose', 'Make underwater sculptures', 'Glassing the surface', 'Unload some timber', 'Plant a tree']
 
-
-// appends cards to #recent
-function appendData(input) {
-  console.log(input);
+function appendData (input) {
+  docRecent.innerHTML = '';
 
   for (var i = 0; i < input.length; i++) {
     var createCard = document.createElement('div');
