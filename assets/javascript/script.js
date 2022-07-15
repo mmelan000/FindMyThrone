@@ -3,8 +3,8 @@ var gottaGo = document.querySelector('#custom-map-control-button');
 var docRecent = document.querySelector('#recent');
 
 function appendData (input) {
-  console.log(input);
-
+  docRecent.innerHTML = '';
+  
   for (var i = 0; i < input.length; i++) {
   var createCard = document.createElement('div');
   var createCardName = document.createElement('h3');
