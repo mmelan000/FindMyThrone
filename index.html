@@ -14,13 +14,75 @@
     <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Fira+Code&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/0586516412.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="icon" type="image/png" href="./assets/images/toilet.png" />
+    <link rel="icon" type="image/png" href="./assets/images/toilet.png"/>
 </head>
 
 <body>
     <div class="container" id="page">
         <header class="has-text-centered">
             <h1 class="container-fluid is-size-1">FindMyThrone</h1>
+
+       </header>
+    <div class="columns is-centered has-text-centered">
+        <!--Search bar-->
+        <div class="column is-half">
+            <div class="field">
+                <p class="control has-icons-left has-icons-right">
+                        <input class="input" type="text" placeholder="Where doodoo you wanna go?">
+                            <button class="button is-normal">I gotta go!</button>
+                            <span class="icon is-small is-left">
+                            <i class="fa-solid fa-toilet"></i>
+                            </span>
+                </p>
+            </div>
+              
+            <div id="map"></div>
+
+            <div class="container">
+                <p id="local">Local Loos:</p>
+                    <div class="columns is-multiline">
+                        <div class="column">
+                            <div class="card" id="Result1">#1</div>
+                        </div>
+
+                        <div class="column">
+                            <div class="card" id="Result2">#2</div>
+                        </div>
+
+                        <div class="column">
+                            <div class="card" id="Result3">#3</div>
+                        </div>
+
+                        <div class="column">
+                            <div class="card" id="Result4">#4</div>
+                        </div>
+
+                        <div class="column">
+                            <div class="card" id="Result5">#5</div>
+                        </div>
+
+                    </div>
+            </div>
+        </div>
+        
+
+       
+
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYtyNqtzqQ6Ni4aB_yASKG_uXHa0_amuE&callback=initMap&v=weekly"
+        defer></script>
+    <script src="./assets/javascript/script.js"></script>
+        
+    <div class="has-text-centered">
+        <label>
+            <p id="theSquad">Thanks for using the app</p>
+            <a href>The Marvelous Breakfast Squad</a>
+        </label>
+    </div>
         </header>
         <div class="columns is-centered has-text-centered">
             <!--Search bar-->
@@ -59,6 +121,7 @@
             <p id="theSquad">Thanks for using the app</p>
             <a href>The Marvelous Breakfast Squad</a>
         </label>
+
 </body>
 
 </html>

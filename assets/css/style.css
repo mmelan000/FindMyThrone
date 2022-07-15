@@ -1,7 +1,10 @@
+
 body {
     background-color: burlywood;
     min-height: 100vh;
     font-family: 'Fira Code', monospace;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 .hidden {
@@ -12,42 +15,52 @@ body {
     justify-content: center;
 }
 
-header {
-    font-family: 'Audiowide', cursive;
-    color: brown;
-    padding-bottom: 10px;
-    padding-top: 10px;
-}
-
 #result1 {
-    color: brown;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: solid 2px brown;
 }
 
 #result2 {
-    color: orangered;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: solid 2px orangered;
 }
 
 #result3 {
-    color: yellow;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: solid 2px yellow;
 }
 
 #result4 {
-    color: green;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: solid 2px green;
 }
 
 #result5 {
-    color: black;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: solid 2px black;
 }
 
-#recent p {
-    color: brown;
-    font-weight: 700;
+h1 {
+    color: #FFD449;
+}
+
+#submit {
+    color: #104911; 
 }
 
 #map {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;    
     height: 50vh;
     width: 100%;
-  }
+}
+
 .custom-map-control-button {
     background-color: #fff;
     border: 0;
@@ -60,6 +73,47 @@ header {
     height: 40px;
     cursor: pointer;
   }
+  
   .custom-map-control-button:hover {
     background: rgb(235, 235, 235);
   }
+
+ {cursor: url(https://cur.cursors-4u.net/others/oth-3/oth223.cur), auto !important;}
+
+#local {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: x-large; 
+    font-weight: bolder;
+    color: brown;
+
+}
+
+#map {
+    height: 50vh;
+    width: 100%;
+    border-radius: 5px;
+  }
+
+.custom-map-control-button {
+    background-color: #fff;
+    border: 0;
+    border-radius: 2px;
+    box-shadow: 0 1px 4px -1px rgba(0, 0, 0, 0.3);
+    margin: 10px;
+    padding: 0 0.5em;
+    font: 400 18px Roboto, Arial, sans-serif;
+    overflow: hidden;
+    height: 40px;
+    cursor: pointer;
+  }
+
+  .custom-map-control-button:hover {
+    background: rgb(235, 235, 235);
+  }
+
+.button {
+    margin-top: 5px;
+    font-weight: 700;
+
+}
