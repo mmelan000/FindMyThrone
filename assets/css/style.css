@@ -1,6 +1,52 @@
 
 body {
-    background-color: #8F5C38;
+    background-color: burlywood;
+    min-height: 100vh;
+    font-family: 'Fira Code', monospace;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.hidden {
+    /*display: none;*/
+}
+
+.is-one-third {
+    justify-content: center;
+}
+
+
+
+
+
+#Result1 {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: solid 2px brown;
+}
+
+#Result2 {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: solid 2px orangered;
+}
+
+#Result3 {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: solid 2px yellow;
+}
+
+#Result4 {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: solid 2px green;
+}
+
+#Result5 {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: solid 2px black;
 }
 
 h1 {
@@ -39,7 +85,42 @@ h1 {
  {cursor: url(https://cur.cursors-4u.net/others/oth-3/oth223.cur), auto !important;}
   /* End https://www.cursors-4u.com */
 
-#recent p {
+
+#local {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: x-large; 
+    font-weight: bolder;
     color: brown;
+
+}
+
+#map {
+    height: 50vh;
+    width: 100%;
+    border-radius: 5px;
+  }
+
+.custom-map-control-button {
+    background-color: #fff;
+    border: 0;
+    border-radius: 2px;
+    box-shadow: 0 1px 4px -1px rgba(0, 0, 0, 0.3);
+    margin: 10px;
+    padding: 0 0.5em;
+    font: 400 18px Roboto, Arial, sans-serif;
+    overflow: hidden;
+    height: 40px;
+    cursor: pointer;
+  }
+
+  .custom-map-control-button:hover {
+    background: rgb(235, 235, 235);
+  }
+
+.button {
+    margin-top: 5px;
+=======
     font-weight: 700;
+
 }
