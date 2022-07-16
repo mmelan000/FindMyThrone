@@ -3,11 +3,15 @@
 }
 
 body {
-    background-color: burlywood;
     min-height: 100vh;
     font-family: 'Fira Code', monospace;
     padding-left: 5px;
     padding-right: 5px;
+    background-image: url("../images/tile_background.png");
+}
+
+.column {
+    background-color: burlywood;
 }
 
 h1 {
