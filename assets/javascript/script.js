@@ -2,15 +2,15 @@ let map, infoWindow;
 var gottaGo = document.querySelector('#custom-map-control-button');
 var docRecent = document.querySelector('#recent');
 var poopJokesArray = ['Bake a loaf', 'Barbarians at the gate', 'Blow Mud', 'Bomb the Bowl', 'Chop a log', 'Cook a butt burrito', 'Curl some pipe', 'Do the Royal Squat', 'Doo the doo', 'Drop the kids off at the pool',
-                      'Dump a stump', 'Fill the peanut butter jar', 'Float a trout', 'Grow a Tail', 'Launch a Butt Shuttle', 'Launch a torpedo', 'Lay a brick', 'Make a deposit at the porcelain bank', 'Log an entry',
-                      'Make room for lunch', 'Offload some freight', 'Pack your underwear', 'Paint the bowl', 'Park some bark', 'Pinch a loaf', 'Plant some corn', "Poke the turtle's head out", "I'm Prairie Dogging", 
-                      'Punish the porcelain', 'Recycle fiber', 'Release your payload', 'Seek revenge for the Brown Bomber', 'Sink the Bismark', 'Sit on the throne', 'Squeeze the cheese', 'Take the Browns to the Superbowl',
-                      'Bust a grumpy', 'Build a log cabin', "Make like Snoop and 'Drop it like it's hot'", 'Unloose the caboose', 'Go see a man about a horse', 'Murder a brown snake', 'Download some software',
-                      'Drop some potatoes in the crock pot', 'Craft a fudge pop', 'Release the Kraken', 'Get something down on paper', 'A brown dog is scratching at the back door', 'Liberate the brown trout', 
-                      'Let the turtles loose', 'Make underwater sculptures', 'Glassing the surface', 'Unload some timber', 'Plant a tree']
+  'Dump a stump', 'Fill the peanut butter jar', 'Float a trout', 'Grow a Tail', 'Launch a Butt Shuttle', 'Launch a torpedo', 'Lay a brick', 'Make a deposit at the porcelain bank', 'Log an entry',
+  'Make room for lunch', 'Offload some freight', 'Pack your underwear', 'Paint the bowl', 'Park some bark', 'Pinch a loaf', 'Plant some corn', "Poke the turtle's head out", "I'm Prairie Dogging",
+  'Punish the porcelain', 'Recycle fiber', 'Release your payload', 'Seek revenge for the Brown Bomber', 'Sink the Bismark', 'Sit on the throne', 'Squeeze the cheese', 'Take the Browns to the Superbowl',
+  'Bust a grumpy', 'Build a log cabin', "Make like Snoop and 'Drop it like it's hot'", 'Unloose the caboose', 'Go see a man about a horse', 'Murder a brown snake', 'Download some software',
+  'Drop some potatoes in the crock pot', 'Craft a fudge pop', 'Release the Kraken', 'Get something down on paper', 'A brown dog is scratching at the back door', 'Liberate the brown trout',
+  'Let the turtles loose', 'Make underwater sculptures', 'Glassing the surface', 'Unload some timber', 'Plant a tree']
 
 // appends api call into cards
-function appendData (input) {
+function appendData(input) {
   docRecent.innerHTML = '';
 
   for (var i = 0; i < input.length; i++) {
@@ -23,7 +23,7 @@ function appendData (input) {
     var ratingTotal = input[i].upvote + input[i].downvote;
     var rating = input[i].upvote / ratingTotal;
     console.log(rating);
-    
+
 
 
     mapMarkers(input[i].latitude, input[i].longitude);
@@ -35,13 +35,13 @@ function appendData (input) {
     } else if (!rating) {
       createCardRating.textContent = 'Rating: Unrated';
     } else {
-      createCardRating.textContent = 'Rating: ' + rating*100 + '%';
+      createCardRating.textContent = 'Rating: ' + rating * 100 + '%';
     }
-    createThumbsUp.src="./assets/images/thumbsU.jpeg";
-    createThumbsDown.src="./assets/images/thumbsD.jpeg";
+    createThumbsUp.src = "./assets/images/thumbsU.jpeg";
+    createThumbsDown.src = "./assets/images/thumbsD.jpeg";
 
     createCard.setAttribute('class', 'result')
-    createCard.setAttribute('id', 'result' + (i+1));
+    createCard.setAttribute('id', 'result' + (i + 1));
     createCard.appendChild(createCardName);
     createCard.appendChild(createCardLocation);
     createCard.appendChild(createCardRating);
@@ -65,7 +65,7 @@ function getRestroomAPI(lat, lon) {
 function initMap() {
   map = new google.maps.Map(document.getElementById("map"), {
     center: { lat: 51.4197, lng: 0.0831 },
-    zoom:12,
+    zoom: 12,
   });
   infoWindow = new google.maps.InfoWindow();
 }
@@ -105,11 +105,11 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
   infoWindow.open(map);
 }
 // give random pun to near me button
-function poopJokesButton () {
+function poopJokesButton() {
   gottaGo.textContent = poopJokesArray[Math.floor(Math.random() * poopJokesArray.length)];
 }
 // adds map markers
-function mapMarkers (latitude, longitude) {
+function mapMarkers(latitude, longitude) {
   console.log('mapMarkers called');
   console.log(latitude);
   console.log(longitude);

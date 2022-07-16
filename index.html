@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,19 +18,20 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="icon" type="image/png" href="./assets/images/toilet.png" />
 </head>
+
 <body>
     <main class="container" id="page">
         <header class="columns is-centered has-text-centered">
             <h1 class="column is-half is-size-1" id="find-throne">FindMyThrone</h1>
         </header>
-        <div class="columns is-centered has-text-centered">
+        <section class="columns is-centered has-text-centered">
             <!--Search bar-->
             <div class="column is-half">
                 <div class="field">
                     <p class="control has-icons-left has-icons-right">
                         <input class="input" type="text" placeholder="Where doodoo you wanna go?">
                         <button class="button is-normal" id="custom-map-control-button">I gotta go!</button>
-                        <button class="button is-normal" id="form-to-map"></button>
+                        <button class="button is-normal" id="form-to-map">Search</button>
                         <span class="icon is-small is-left">
                             <i class="fa-solid fa-toilet"></i>
                         </span>
@@ -41,13 +43,13 @@
                     <div class="columns is-multiline is-centered" id="recent"></div>
                 </div>
             </div>
-        </div>
-        <div class="columns is-centered has-text-centered">
-            <footer class="column is-half">
+        </section>
+        <footer class="columns is-centered has-text-centered">
+            <div class="column is-half">
                 <p id="theSquad">Thanks for using the app!</p>
                 <a href>The Marvelous Breakfast Squad</a>
-            </footer>
-        </div>
+            </div>
+        </footer>
     </main>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -56,4 +58,5 @@
         defer></script>
     <script src="./assets/javascript/script.js"></script>
 </body>
+
 </html>
