@@ -3,19 +3,16 @@
 }
 
 body {
-    /* background-color: burlywood; */
-
-    background-image: url('../images/tile_background.png');
+    background-color: burlywood;
     min-height: 100vh;
     font-family: 'Fira Code', monospace;
     padding-left: 5px;
     padding-right: 5px;
-    
 }
 
 h1 {
     font-family: 'Audiowide', cursive;
-    color: white;
+    color: brown;
 }
 
 .button {
@@ -40,10 +37,6 @@ h1 {
     background: rgb(235, 235, 235);
 }
 
-.column {
-    background-color: burlywood;
-}
-
 .is-one-third {
     justify-content: center;
 }
@@ -51,12 +44,15 @@ h1 {
 .result {
     margin-top: 5px;
     margin-bottom: 5px;
-    width: 90%;
-    color: #fff;
-    box-shadow: 10px 5px 5px black ;
-    border-radius: 20px;
-    padding: 10px;
-    text-align: left;
+    width: 100%;
+}
+
+.result>h3 {
+    border: 1px solid black;
+}
+
+.result>p {
+    border: 1px solid black;
 }
 
 #local {
@@ -64,7 +60,7 @@ h1 {
     margin-bottom: 5px;
     font-size: x-large;
     font-weight: bolder;
-    color: white;
+    color: brown;
 }
 
 #map {
@@ -77,27 +73,23 @@ h1 {
 }
 
 #result1 {
-    background-color: red;
-    
+    border: solid 2px brown;
 }
 
 #result2 {
-    background-color: orangered;
-    
+    border: solid 2px orangered;
 }
 
 #result3 {
-    background-color: rgb(163, 127, 28);
+    border: solid 2px yellow;
 }
 
 #result4 {
-    background-color:  green;
-    
+    border: solid 2px green;
 }
 
 #result5 {
-    background-color:  blue;
-   
+    border: solid 2px black;
 }
 
 #submit {
