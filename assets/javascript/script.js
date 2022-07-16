@@ -1,5 +1,7 @@
 let map, infoWindow;
+var searchForm = document.querySelector("#search")
 var gottaGo = document.querySelector('#custom-map-control-button');
+var searchButton = document.querySelector('#searchbox');
 var docRecent = document.querySelector('#recent');
 var poopJokesArray = ['Bake a loaf', 'Barbarians at the gate', 'Blow Mud', 'Bomb the Bowl', 'Chop a log', 'Cook a butt burrito', 'Curl some pipe', 'Do the Royal Squat', 'Doo the doo', 'Drop the kids off at the pool',
   'Dump a stump', 'Fill the peanut butter jar', 'Float a trout', 'Grow a Tail', 'Launch a Butt Shuttle', 'Launch a torpedo', 'Lay a brick', 'Make a deposit at the porcelain bank', 'Log an entry',
@@ -22,9 +24,6 @@ function appendData(input) {
     var createThumbsDown = document.createElement("img");
     var ratingTotal = input[i].upvote + input[i].downvote;
     var rating = input[i].upvote / ratingTotal;
-    console.log(rating);
-
-
 
     mapMarkers(input[i].latitude, input[i].longitude);
 
@@ -119,8 +118,13 @@ function mapMarkers(latitude, longitude) {
     map: map,
   });
 }
+function initialize() {
+  var formdata= searchForm.value;
+  console.log(formdata);
+}
+
 
 gottaGo.addEventListener('click', centerMap);
-
+searchButton.addEventListener('click', initialize);
 window.initMap = initMap;
 poopJokesButton();
