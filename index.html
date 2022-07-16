@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,12 +17,10 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="icon" type="image/png" href="./assets/images/toilet.png" />
 </head>
-
 <body>
     <main class="container" id="page">
-        <header class="has-text-centered">
-            <h1 id="find-throne" class="container-fluid is-size-1">FindMyThrone</h1>
-
+        <header class="columns is-centered has-text-centered">
+            <h1 class="column is-half is-size-1" id="find-throne">FindMyThrone</h1>
         </header>
         <div class="columns is-centered has-text-centered">
             <!--Search bar-->
@@ -38,25 +35,25 @@
                         </span>
                     </p>
                 </div>
-
                 <div id="map"></div>
-
                 <div class="container">
                     <p id="local">Local Loos:</p>
-                    <div class="columns is-multiline" id="recent"></div>
+                    <div class="columns is-multiline is-centered" id="recent"></div>
                 </div>
             </div>
         </div>
-        <div class="has-text-centered">
-            <label>
-                <p id="theSquad">Thanks for using the app</p>
+        <div class="columns is-centered has-text-centered">
+            <footer class="column is-half">
+                <p id="theSquad">Thanks for using the app!</p>
                 <a href>The Marvelous Breakfast Squad</a>
-            </label>
+            </footer>
         </div>
     </main>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYtyNqtzqQ6Ni4aB_yASKG_uXHa0_amuE&callback=initMap&v=weekly" defer></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYtyNqtzqQ6Ni4aB_yASKG_uXHa0_amuE&callback=initMap&v=weekly"
+        defer></script>
     <script src="./assets/javascript/script.js"></script>
 </body>
-
 </html>

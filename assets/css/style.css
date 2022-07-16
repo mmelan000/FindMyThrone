@@ -40,6 +40,10 @@ h1 {
     background: rgb(235, 235, 235);
 }
 
+.column {
+    background-color: burlywood;
+}
+
 .is-one-third {
     justify-content: center;
 }
@@ -47,7 +51,7 @@ h1 {
 .result {
     margin-top: 5px;
     margin-bottom: 5px;
-    width: 100%;
+    width: 90%;
     color: #fff;
     box-shadow: 10px 5px 5px black ;
     border-radius: 20px;
