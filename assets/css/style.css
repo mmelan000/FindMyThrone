@@ -10,6 +10,7 @@ body {
     font-family: 'Fira Code', monospace;
     padding-left: 5px;
     padding-right: 5px;
+    
 }
 
 h1 {
@@ -47,6 +48,11 @@ h1 {
     margin-top: 5px;
     margin-bottom: 5px;
     width: 100%;
+    color: #fff;
+    box-shadow: 10px 5px 5px black ;
+    border-radius: 20px;
+    padding: 10px;
+    text-align: left;
 }
 
 #local {
@@ -68,42 +74,26 @@ h1 {
 
 #result1 {
     background-color: red;
-    color: #fff;
-    box-shadow: 10px 5px 5px black ;
-    border-radius: 20px;
-    padding: 10px;
+    
 }
 
 #result2 {
     background-color: orangered;
-    color: #fff;
-    box-shadow: 10px 5px 5px black ;
-    border-radius: 20px;
-    padding: 10px;
+    
 }
 
 #result3 {
-    background-color:  yellow;
-    color: black;
-    box-shadow: 10px 5px 5px black ;
-    border-radius: 20px;
-    padding: 10px;
+    background-color: rgb(163, 127, 28);
 }
 
 #result4 {
     background-color:  green;
-    color: #fff;
-    box-shadow: 10px 5px 5px black ;
-    border-radius: 20px;
-    padding: 10px;
+    
 }
 
 #result5 {
     background-color:  blue;
-    color: #fff;
-    box-shadow: 10px 5px 5px black ; 
-    border-radius: 20px;
-    padding: 10px;
+   
 }
 
 #submit {
