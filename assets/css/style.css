@@ -3,7 +3,9 @@
 }
 
 body {
-    background-color: burlywood;
+    /* background-color: burlywood; */
+
+    background-image: url('../images/tile_background.png');
     min-height: 100vh;
     font-family: 'Fira Code', monospace;
     padding-left: 5px;
@@ -12,7 +14,7 @@ body {
 
 h1 {
     font-family: 'Audiowide', cursive;
-    color: brown;
+    color: white;
 }
 
 .button {
@@ -47,20 +49,12 @@ h1 {
     width: 100%;
 }
 
-.result>h3{
-    border: 1px solid black;
-}
-
-.result>p{
-    border: 1px solid black;
-}
-
 #local {
     margin-top: 5px;
     margin-bottom: 5px;
     font-size: x-large;
     font-weight: bolder;
-    color: brown;
+    color: white;
 }
 
 #map {
@@ -73,25 +67,49 @@ h1 {
 }
 
 #result1 {
-    border: solid 2px brown;
+    background-color: red;
+    color: #fff;
+    box-shadow: 10px 5px 5px black ;
+    border-radius: 20px;
+    padding: 10px;
 }
 
 #result2 {
-    border: solid 2px orangered;
+    background-color: orangered;
+    color: #fff;
+    box-shadow: 10px 5px 5px black ;
+    border-radius: 20px;
+    padding: 10px;
 }
 
 #result3 {
-    border: solid 2px yellow;
+    background-color:  yellow;
+    color: black;
+    box-shadow: 10px 5px 5px black ;
+    border-radius: 20px;
+    padding: 10px;
 }
 
 #result4 {
-    border: solid 2px green;
+    background-color:  green;
+    color: #fff;
+    box-shadow: 10px 5px 5px black ;
+    border-radius: 20px;
+    padding: 10px;
 }
 
 #result5 {
-    border: solid 2px black;
+    background-color:  blue;
+    color: #fff;
+    box-shadow: 10px 5px 5px black ; 
+    border-radius: 20px;
+    padding: 10px;
 }
 
 #submit {
     color: #104911;
+}
+
+#theSquad{
+    color: white;
 }
