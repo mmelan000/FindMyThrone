@@ -118,13 +118,54 @@ function mapMarkers(latitude, longitude) {
     map: map,
   });
 }
-function initialize() {
-  var formdata= searchForm.value;
-  console.log(formdata);
+
+function identifyLocationType(input) {
+  var checker = Number(input);
+  if (Number.isInteger(checker) && checker > 0) {
+      getLocationByZip(input);
+  } else if (Number.isInteger(checker) && checker <= 0) {
+      return;
+  } else {
+      getLocationByName(input);
+  }
+}
+function getLocationByZip(zip) {
+  fetch('https://maps.googleapis.com/maps/api/geocode/json?address=' + zip + '&key=AIzaSyCYtyNqtzqQ6Ni4aB_yASKG_uXHa0_amuE')
+      .then(function (response) {
+        console.log(response)
+          return response.json();
+      })
+      .then(function (data) {
+        var googleLat= data.results[0].geometry.location.lat;
+        var googleLon= data.results[0].geometry.location.lng;
+        getRestroomAPI(googleLat, googleLon);
+          console.log(data);
+      })
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function captureFormData() {
+  var formdata= searchForm.value;
+  identifyLocationType(formdata);
+}
+
+
+
 gottaGo.addEventListener('click', centerMap);
-searchButton.addEventListener('click', initialize);
+searchButton.addEventListener('click', captureFormData);
 window.initMap = initMap;
 poopJokesButton();
