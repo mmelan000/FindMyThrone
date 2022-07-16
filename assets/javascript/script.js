@@ -22,6 +22,8 @@ function appendData (input) {
     var rating = input[i].upvote / ratingTotal;
     console.log(rating);
 
+    mapMarkers(input[i].latitude, input[i].longitude);
+
     createCardName.textContent = 'Name: ' + input[i].name;
     createCardLocation.textContent = 'Location: ' + input[i].street + ', ' + input[i].city;
     if (rating === 0) {
@@ -55,7 +57,7 @@ function getRestroomAPI(lat, lon) {
 function initMap() {
   map = new google.maps.Map(document.getElementById("map"), {
     center: { lat: 51.4197, lng: 0.0831 },
-    zoom: 15,
+    zoom:12,
   });
   infoWindow = new google.maps.InfoWindow();
 }
@@ -98,9 +100,19 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 function poopJokesButton () {
   gottaGo.textContent = poopJokesArray[Math.floor(Math.random() * poopJokesArray.length)];
 }
+// adds map markers
+function mapMarkers (latitude, longitude) {
+  console.log('mapMarkers called');
+  console.log(latitude);
+  console.log(longitude);
+  var locCoords = { lat: latitude, lng: longitude };
+  var marker = new google.maps.Marker({
+    position: locCoords,
+    map: map,
+  });
+}
+
+gottaGo.addEventListener('click', centerMap);
 
 window.initMap = initMap;
 poopJokesButton();
-
-
-gottaGo.addEventListener('click', centerMap);
