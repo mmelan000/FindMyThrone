@@ -37,8 +37,8 @@ function appendData(input) {
     } else {
       createCardRating.textContent = 'Rating: ' + rating * 100 + '%';
     }
-    createThumbsUp.src = "./assets/images/thumbsU.jpeg";
-    createThumbsDown.src = "./assets/images/thumbsD.jpeg";
+    createThumbsUp.src = "./assets/images/thumbsUp.jpeg";
+    createThumbsDown.src = "./assets/images/thumbsDown.jpeg";
 
     createCard.setAttribute('class', 'result')
     createCard.setAttribute('id', 'result' + (i + 1));
