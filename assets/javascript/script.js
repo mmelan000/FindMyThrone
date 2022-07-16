@@ -18,9 +18,13 @@ function appendData (input) {
     var createCardName = document.createElement('h3');
     var createCardLocation = document.createElement('p');
     var createCardRating = document.createElement('p');
+    var createThumbsUp = document.createElement("img");
+    var createThumbsDown = document.createElement("img");
     var ratingTotal = input[i].upvote + input[i].downvote;
     var rating = input[i].upvote / ratingTotal;
     console.log(rating);
+    
+
 
     createCardName.textContent = 'Name: ' + input[i].name;
     createCardLocation.textContent = 'Location: ' + input[i].street + ', ' + input[i].city;
@@ -31,12 +35,16 @@ function appendData (input) {
     } else {
       createCardRating.textContent = 'Rating: ' + rating*100 + '%';
     }
+    createThumbsUp.src="./assets/images/thumbsU.jpeg";
+    createThumbsDown.src="./assets/images/thumbsD.jpeg";
 
     createCard.setAttribute('class', 'result')
     createCard.setAttribute('id', 'result' + (i+1));
     createCard.appendChild(createCardName);
     createCard.appendChild(createCardLocation);
     createCard.appendChild(createCardRating);
+    createCard.appendChild(createThumbsUp);
+    createCard.appendChild(createThumbsDown);
     docRecent.appendChild(createCard);
   }
 }
