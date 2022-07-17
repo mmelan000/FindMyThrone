@@ -56,23 +56,6 @@ h1 {
     text-align: left;
 }
 
-#local {
-    margin-top: 5px;
-    margin-bottom: 5px;
-    font-size: x-large;
-    font-weight: bolder;
-    color: brown;
-}
-
-#map {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    height: 50vh;
-    width: 100%;
-    border-radius: 5px;
-}
-
 .result1 {
     background-color: red;
 }
@@ -91,6 +74,23 @@ h1 {
 
 .result5 {
     background-color:  blue;
+}
+
+#local {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: x-large;
+    font-weight: bolder;
+    color: brown;
+}
+
+#map {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 50vh;
+    width: 100%;
+    border-radius: 5px;
 }
 
 #submit {
