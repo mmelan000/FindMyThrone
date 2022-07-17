@@ -50,7 +50,7 @@ h1 {
     margin-bottom: 5px;
     width: 90%;
     color: #fff;
-    box-shadow: 10px 5px 5px black ;
+    box-shadow: 10px 5px 5px black;
     border-radius: 20px;
     padding: 10px;
     text-align: left;
@@ -65,15 +65,15 @@ h1 {
 }
 
 .result3 {
-    background-color:  rgb(163, 127, 28);
+    background-color: rgb(163, 127, 28);
 }
 
 .result4 {
-    background-color:  green;
+    background-color: green;
 }
 
 .result5 {
-    background-color:  blue;
+    background-color: blue;
 }
 
 #local {
@@ -97,6 +97,6 @@ h1 {
     color: #104911;
 }
 
-#theSquad{
+#theSquad {
     color: white;
 }
