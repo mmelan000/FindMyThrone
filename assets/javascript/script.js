@@ -16,12 +16,14 @@ function appendData(input) {
   docRecent.innerHTML = '';
 
   for (var i = 0; i < input.length; i++) {
+    console.log(input[i]);
     var createCard = document.createElement('div');
+    var createCardTextDiv = document.createElement('div');
     var createCardName = document.createElement('h3');
     var createCardLocation = document.createElement('p');
     var createCardRating = document.createElement('p');
-    var createThumbsUp = document.createElement("img");
-    var createThumbsDown = document.createElement("img");
+    var createThumbsUp = document.createElement("h4");
+    var createThumbsDown = document.createElement("h4");
     var ratingTotal = input[i].upvote + input[i].downvote;
     var rating = input[i].upvote / ratingTotal;
 
@@ -36,16 +38,26 @@ function appendData(input) {
     } else {
       createCardRating.textContent = 'Rating: ' + rating * 100 + '%';
     }
-    createThumbsUp.src="./assets/images/thumUimg.png";
-    createThumbsDown.src="./assets/images/thumbDimg.png";
-    
-    createCard.setAttribute('class', 'result')
-    createCard.setAttribute('id', 'result' + (i + 1));
-    createCard.appendChild(createCardName);
-    createCard.appendChild(createCardLocation);
-    createCard.appendChild(createCardRating);
+    createThumbsUp.textContent = String.fromCodePoint(0x1F44D);
+    createThumbsDown.textContent = String.fromCodePoint(0x1F44E);
+    // creates card and assigns styling
+    createCard.setAttribute('class', 'columns is-vcentered result result' + (i + 1))
+    // creates card text content and assign styling
+    createCard.appendChild(createCardTextDiv);
+    createCardTextDiv.setAttribute('class', 'column is-10 result-text-area result' + (i + 1))
+    createCardTextDiv.setAttribute('id', 'result' + (i + 1));
+    createCardTextDiv.appendChild(createCardName);
+    createCardTextDiv.appendChild(createCardLocation);
+    createCardTextDiv.appendChild(createCardRating);
+    // creates thumbs up and assigns styling and unique ID
     createCard.appendChild(createThumbsUp);
+    createThumbsUp.setAttribute('class', 'column is-1 vote result-TU result' + (i + 1))
+    createThumbsUp.setAttribute('id', 'TU' + input[i].id);
+    // creates thumbs down and assigns styling and unique ID
     createCard.appendChild(createThumbsDown);
+    createThumbsDown.setAttribute('class', 'column is-mobile is-1 vote result-TD result' + (i + 1))
+    createThumbsDown.setAttribute('id', 'TD' + input[i].id);
+    // appends card to page
     docRecent.appendChild(createCard);
   }
 }
@@ -118,54 +130,40 @@ function mapMarkers(latitude, longitude) {
     map: map,
   });
 }
-
+// processes fetch by zip
+function getLocationByZip(zip) {
+  fetch('https://maps.googleapis.com/maps/api/geocode/json?address=' + zip + '&key=AIzaSyCYtyNqtzqQ6Ni4aB_yASKG_uXHa0_amuE')
+    .then(function (response) {
+      console.log(response)
+      return response.json();
+    })
+    .then(function (data) {
+      var googleLat = data.results[0].geometry.location.lat;
+      var googleLon = data.results[0].geometry.location.lng;
+      getRestroomAPI(googleLat, googleLon);
+      console.log(data);
+    })
+}
+// identifies location type and forwards data to correct function
 function identifyLocationType(input) {
   var checker = Number(input);
   if (Number.isInteger(checker) && checker > 0) {
-      getLocationByZip(input);
+    getLocationByZip(input);
   } else if (Number.isInteger(checker) && checker <= 0) {
-      return;
+    return;
   } else {
-      getLocationByName(input);
+    getLocationByName(input);
   }
 }
-function getLocationByZip(zip) {
-  fetch('https://maps.googleapis.com/maps/api/geocode/json?address=' + zip + '&key=AIzaSyCYtyNqtzqQ6Ni4aB_yASKG_uXHa0_amuE')
-      .then(function (response) {
-        console.log(response)
-          return response.json();
-      })
-      .then(function (data) {
-        var googleLat= data.results[0].geometry.location.lat;
-        var googleLon= data.results[0].geometry.location.lng;
-        getRestroomAPI(googleLat, googleLon);
-          console.log(data);
-      })
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// pulls form data
 function captureFormData() {
-  var formdata= searchForm.value;
+  var formdata = searchForm.value;
   identifyLocationType(formdata);
 }
-
-
-
+// event listeners and startup functions
 gottaGo.addEventListener('click', centerMap);
 searchButton.addEventListener('click', captureFormData);
 window.initMap = initMap;
 poopJokesButton();
+// this only is here for testing purposes.
+identifyLocationType(19114);
