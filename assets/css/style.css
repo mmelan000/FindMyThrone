@@ -1,3 +1,12 @@
+:root {
+    --result1bg: rgb(127, 31, 31);
+    --result2bg: rgb(161, 80, 50);
+    --result3bg: rgb(163, 127, 28);
+    --result4bg: rgb(37, 95, 37);
+    --result5bg: rgb(25, 25, 102);
+    --resultText: white;
+}
+
 * {
     cursor: url(https://cur.cursors-4u.net/others/oth-3/oth223.cur), auto !important;
 }
@@ -55,7 +64,7 @@ h1 {
     margin-top: 5px;
     margin-bottom: 5px;
     width: 90%;
-    color: #fff;
+    color: var(--resultText);
     box-shadow: 10px 5px 5px black;
     border-radius: 20px;
     padding: 10px;
@@ -78,27 +87,44 @@ h1 {
 }
 
 .result1 {
-    background-color: red;
+    background-color: var(--result1bg);
 }
 
 .result2 {
-    background-color: orangered;
+    background-color: var(--result2bg);
 }
 
 .result3 {
-    background-color: rgb(163, 127, 28);
+    background-color: var(--result3bg);
 }
 
 .result4 {
-    background-color: green;
+    background-color: var(--result4bg);
 }
 
 .result5 {
-    background-color: blue;
+    background-color: var(--result5bg);
 }
 
-.result:hover {
-    filter: invert(100%);
+.result1:hover {
+    background-color: var(--resultText);
+    color: var(--result1bg);
+}
+.result2:hover {
+    background-color: var(--resultText);
+    color: var(--result2bg);
+}
+.result3:hover {
+    background-color: var(--resultText);
+    color: var(--result3bg);
+}
+.result4:hover {
+    background-color: var(--resultText);
+    color: var(--result4bg);
+}
+.result5:hover {
+    background-color: var(--resultText);
+    color: var(--result5bg);
 }
 
 #local {
