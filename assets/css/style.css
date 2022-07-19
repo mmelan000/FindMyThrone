@@ -98,7 +98,7 @@ h1 {
 }
 
 .result:hover {
-    filter: invert(55%);
+    filter: invert(100%);
 }
 
 #local {
