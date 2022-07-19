@@ -1,4 +1,4 @@
-let map, infoWindow;
+let map, infoWindow, zoomy;
 var searchForm = document.querySelector("#search")
 var gottaGo = document.querySelector('#custom-map-control-button');
 var searchButton = document.querySelector('#searchbox');
@@ -11,7 +11,7 @@ var poopJokesArray = ['Bake a loaf', 'Barbarians at the gate', 'Blow Mud', 'Bomb
   'Drop some potatoes in the crock pot', 'Craft a fudge pop', 'Release the Kraken', 'Get something down on paper', 'A brown dog is scratching at the back door', 'Liberate the brown trout',
   'Let the turtles loose', 'Make underwater sculptures', 'Glassing the surface', 'Unload some timber', 'Plant a tree']
 
-
+//calls lS to see if location has been voted on for before and apply styles
 function renderLS(thumbsUpID) {
   if (localStorage.getItem(thumbsUpID) === null) return null;
   if (localStorage.getItem(thumbsUpID) === 'true') {
@@ -22,13 +22,23 @@ function renderLS(thumbsUpID) {
     document.querySelector('#' + thumbsUpID).nextElementSibling.setAttribute('class', 'column is-1 result-TD-active')
   };
 }
-
+// sets zoom distance based on furthest bathroom
+function zoomMap (input) {
+  map.setZoom(16-input);
+}
+// adds map markers
+function mapMarkers(latitude, longitude) {
+  var locCoords = { lat: latitude, lng: longitude };
+  var marker = new google.maps.Marker({
+    position: locCoords,
+    map: map,
+  });
+}
 // appends api call into cards
 function appendData(input) {
   docRecent.innerHTML = '';
 
   for (var i = 0; i < input.length; i++) {
-    console.log(input[i]);
     var createCard = document.createElement('div');
     var createCardTextDiv = document.createElement('div');
     var createCardName = document.createElement('p');
@@ -82,14 +92,15 @@ function appendData(input) {
   }
 }
 // calls restroom API data
-function getRestroomAPI(lat, lon) {
-  fetch('https://www.refugerestrooms.org/api/v1/restrooms/by_location?page=1&per_page=5&offset=0&lat=' + lat + '&lng=' + lon)
+function getRestroomAPI(input) {
+  fetch('https://www.refugerestrooms.org/api/v1/restrooms/by_location?page=1&per_page=5&offset=0&lat=' + input.lat + '&lng=' + input.lng)
     .then(function (response) {
       return response.json();
     })
     .then(function (data) {
       appendData(data);
-      console.log(data);
+      centerMap(input);
+      zoomMap(data[4].distance);
     })
 }
 // loads map and calls location of first public bathroom
@@ -99,23 +110,25 @@ function initMap() {
     zoom: 12,
   });
   infoWindow = new google.maps.InfoWindow();
+  mapMarkers(51.4197, 0.0831);
+}
+// centers the map based on fed coords
+function centerMap(pos) {
+  infoWindow.setPosition(pos);
+  infoWindow.setContent("Location found.");
+  infoWindow.open(map);
+  map.setCenter(pos);
 }
 // centers map and calls getRestoomAPI
-function centerMap() {
+function geoLocate() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(
       (position) => {
-        const pos = {
+        var posArray = {
           lat: position.coords.latitude,
           lng: position.coords.longitude,
         };
-
-        getRestroomAPI(position.coords.latitude, position.coords.longitude);
-
-        infoWindow.setPosition(pos);
-        infoWindow.setContent("Location found.");
-        infoWindow.open(map);
-        map.setCenter(pos);
+        getRestroomAPI(posArray);
       },
       () => {
         handleLocationError(true, infoWindow, map.getCenter());
@@ -139,46 +152,24 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 function poopJokesButton() {
   gottaGo.textContent = poopJokesArray[Math.floor(Math.random() * poopJokesArray.length)];
 }
-// adds map markers
-function mapMarkers(latitude, longitude) {
-  console.log('mapMarkers called');
-  console.log(latitude);
-  console.log(longitude);
-  var locCoords = { lat: latitude, lng: longitude };
-  var marker = new google.maps.Marker({
-    position: locCoords,
-    map: map,
-  });
-}
-// processes fetch by zip
-function getLocationByZip(zip) {
+// processes fetch by form
+function getLocation(zip) {
   fetch('https://maps.googleapis.com/maps/api/geocode/json?address=' + zip + '&key=AIzaSyCYtyNqtzqQ6Ni4aB_yASKG_uXHa0_amuE')
     .then(function (response) {
-      console.log(response)
       return response.json();
     })
     .then(function (data) {
-      var googleLat = data.results[0].geometry.location.lat;
-      var googleLon = data.results[0].geometry.location.lng;
-      getRestroomAPI(googleLat, googleLon);
-      console.log(data);
+      var posArray = {
+        lat: data.results[0].geometry.location.lat,
+        lng: data.results[0].geometry.location.lng,
+      };
+      getRestroomAPI(posArray);
     })
-}
-// identifies location type and forwards data to correct function
-function identifyLocationType(input) {
-  var checker = Number(input);
-  if (Number.isInteger(checker) && checker > 0) {
-    getLocationByZip(input);
-  } else if (Number.isInteger(checker) && checker <= 0) {
-    return;
-  } else {
-    getLocationByName(input);
-  }
 }
 // pulls form data
 function captureFormData() {
   var formdata = searchForm.value;
-  identifyLocationType(formdata);
+  getLocation(formdata);
 }
 // activates thumbs up and deactivates thumbs down, updates LS
 function thumbsUp(event) {
@@ -197,11 +188,9 @@ function thumbsDown(event) {
   localStorage.setItem(event.target.previousElementSibling.id, false);
 }
 // event listeners and startup functions
-gottaGo.addEventListener('click', centerMap);
+gottaGo.addEventListener('click', geoLocate);
 searchButton.addEventListener('click', captureFormData);
 docRecent.addEventListener('click', thumbsUp);
 docRecent.addEventListener('click', thumbsDown);
 window.initMap = initMap;
 poopJokesButton();
-// this only is here for testing purposes.
-identifyLocationType(19114);
