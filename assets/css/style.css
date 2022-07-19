@@ -1,18 +1,37 @@
+:root {
+    --result1bg: rgb(127, 31, 31);
+    --result2bg: rgb(161, 80, 50);
+    --result3bg: rgb(163, 127, 28);
+    --result4bg: rgb(37, 95, 37);
+    --result5bg: rgb(25, 25, 102);
+    --resultText: white;
+}
+
 * {
     cursor: url(https://cur.cursors-4u.net/others/oth-3/oth223.cur), auto !important;
 }
 
 body {
-    background-color: burlywood;
     min-height: 100vh;
     font-family: 'Fira Code', monospace;
     padding-left: 5px;
     padding-right: 5px;
+    background-image: url("../images/tile_background.png");
+    border-radius: 5px;
+    padding-top: 10px;
 }
 
 h1 {
     font-family: 'Audiowide', cursive;
     color: brown;
+}
+
+#page {
+    margin-top: 15px;
+}
+
+.column {
+    background-color: burlywood;
 }
 
 .button {
@@ -44,21 +63,76 @@ h1 {
 .result {
     margin-top: 5px;
     margin-bottom: 5px;
-    width: 100%;
+    width: 90%;
+    color: var(--resultText);
+    box-shadow: 10px 5px 5px black;
+    border-radius: 20px;
+    padding: 10px;
+    text-align: left;
 }
 
-.result>h3 {
-    border: 1px solid black;
+.result > * {
+    background-color: transparent;
 }
 
-.result>p {
-    border: 1px solid black;
+.result-TU-inactive {
+    filter: grayscale(100%);
+}
+.result-TD-inactive {
+    filter: grayscale(100%);
+}
+.result-TU-active {
+    filter: hue-rotate(90deg);
+}
+.result-TD-active {
+    filter: hue-rotate(270deg);
+}
+
+.result1 {
+    background-color: var(--result1bg);
+}
+
+.result2 {
+    background-color: var(--result2bg);
+}
+
+.result3 {
+    background-color: var(--result3bg);
+}
+
+.result4 {
+    background-color: var(--result4bg);
+}
+
+.result5 {
+    background-color: var(--result5bg);
+}
+
+.result1:hover {
+    background-color: var(--resultText);
+    color: var(--result1bg);
+}
+.result2:hover {
+    background-color: var(--resultText);
+    color: var(--result2bg);
+}
+.result3:hover {
+    background-color: var(--resultText);
+    color: var(--result3bg);
+}
+.result4:hover {
+    background-color: var(--resultText);
+    color: var(--result4bg);
+}
+.result5:hover {
+    background-color: var(--resultText);
+    color: var(--result5bg);
 }
 
 #local {
     margin-top: 5px;
     margin-bottom: 5px;
-    font-size: x-large;
+    font-size: xx-large;
     font-weight: bolder;
     color: brown;
 }
@@ -72,30 +146,11 @@ h1 {
     border-radius: 5px;
 }
 
-#result1 {
-    border: solid 2px brown;
-}
-
-#result2 {
-    border: solid 2px orangered;
-}
-
-#result3 {
-    border: solid 2px yellow;
-}
-
-#result4 {
-    border: solid 2px green;
-}
-
-#result5 {
-    border: solid 2px black;
-}
-
 #submit {
     color: #104911;
 }
 
-#theSquad{
+#theSquad {
+    padding-top: 10px;
     color: white;
 }
