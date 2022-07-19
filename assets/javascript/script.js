@@ -46,17 +46,23 @@ function appendData(input) {
     createCard.setAttribute('id', 'result' + (i + 1));
     // creates card text content and assign styling
     createCard.appendChild(createCardTextDiv);
-    createCardTextDiv.setAttribute('class', 'column is-10 result-text-area result' + (i + 1));
+    createCardTextDiv.setAttribute('class', 'column is-10 result-text-area'
+    //  result' + (i + 1)
+     );
     createCardTextDiv.appendChild(createCardName);
     createCardTextDiv.appendChild(createCardLocation);
     createCardTextDiv.appendChild(createCardRating);
     // creates thumbs up and assigns styling and unique ID
     createCard.appendChild(createThumbsUp);
-    createThumbsUp.setAttribute('class', 'column is-1 vote result-TU result' + (i + 1))
+    createThumbsUp.setAttribute('class', 'column is-1 vote result-TU'
+    //  result' + (i + 1)
+     )
     createThumbsUp.setAttribute('id', 'TU' + input[i].id);
     // creates thumbs down and assigns styling and unique ID
     createCard.appendChild(createThumbsDown);
-    createThumbsDown.setAttribute('class', 'column is-mobile is-1 vote result-TD result' + (i + 1))
+    createThumbsDown.setAttribute('class', 'column is-mobile is-1 vote result-TD'
+    //  result' + (i + 1)
+     )
     createThumbsDown.setAttribute('id', 'TD' + input[i].id);
     // appends card to page
     docRecent.appendChild(createCard);

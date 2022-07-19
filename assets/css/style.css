@@ -62,6 +62,21 @@ h1 {
     text-align: left;
 }
 
+.result-text-area {
+    background-color: inherit;
+    color: inherit;
+}
+
+.result-TU {
+    background-color: inherit;
+    color: inherit;
+}
+
+.result-TD {
+    background-color: inherit;
+    color: inherit;
+}
+
 .result1 {
     background-color: red;
 }
@@ -80,6 +95,10 @@ h1 {
 
 .result5 {
     background-color: blue;
+}
+
+.result:hover {
+    filter: invert(55%);
 }
 
 #local {
@@ -106,51 +125,4 @@ h1 {
 #theSquad {
     padding-top: 10px;
     color: white;
-}
-
-#recent:hover {
-    background-color: burlywood;
-}
-
-#result1:hover {
-    font-size: large;
-    font-weight: bold;
-    background-color: white;
-    color: red;
-}
-
-#result2:hover {
-    font-size: large;
-    font-weight: bold;
-    background-color: white;
-    color: orangered;
-
-}
-
-#result3:hover {
-    font-size: large;
-    font-weight: bold;
-    background-color: white;
-    color: rgb(163, 127, 28);
-
-}
-
-#result4:hover {
-    font-size: large;
-    font-weight: bold;
-    background-color: white;
-    color: green;
-
-}
-
-#result5:hover {
-    font-size: large;
-    font-weight: bold;
-    background-color: white;
-    color: blue;
-
-}
-
-@media screen {
-    
 }
