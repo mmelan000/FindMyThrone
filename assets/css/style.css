@@ -71,19 +71,21 @@ h1 {
     text-align: left;
 }
 
-.result-text-area {
-    background-color: inherit;
-    color: inherit;
+.result > * {
+    background-color: transparent;
 }
 
-.result-TU {
-    background-color: inherit;
-    color: inherit;
+.result-TU-inactive {
+    filter: grayscale(100%);
 }
-
-.result-TD {
-    background-color: inherit;
-    color: inherit;
+.result-TD-inactive {
+    filter: grayscale(100%);
+}
+.result-TU-active {
+    filter: hue-rotate(90deg);
+}
+.result-TD-active {
+    filter: hue-rotate(270deg);
 }
 
 .result1 {

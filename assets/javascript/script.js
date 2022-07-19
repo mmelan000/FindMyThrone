@@ -54,13 +54,13 @@ function appendData(input) {
     createCardTextDiv.appendChild(createCardRating);
     // creates thumbs up and assigns styling and unique ID
     createCard.appendChild(createThumbsUp);
-    createThumbsUp.setAttribute('class', 'column is-1 vote result-TU'
+    createThumbsUp.setAttribute('class', 'column is-1 result-TU-inactive'
     //  result' + (i + 1)
      )
     createThumbsUp.setAttribute('id', 'TU' + input[i].id);
     // creates thumbs down and assigns styling and unique ID
     createCard.appendChild(createThumbsDown);
-    createThumbsDown.setAttribute('class', 'column is-mobile is-1 vote result-TD'
+    createThumbsDown.setAttribute('class', 'column is-1 result-TD-inactive'
     //  result' + (i + 1)
      )
     createThumbsDown.setAttribute('id', 'TD' + input[i].id);
@@ -167,9 +167,32 @@ function captureFormData() {
   var formdata = searchForm.value;
   identifyLocationType(formdata);
 }
+
+
+function thumbsUp(event) {
+  if (!event.target.classList.contains('result-TU-inactive') === true) return null;
+  event.target.setAttribute('class', 'column is-1 result-TU-active');
+  event.target.nextElementSibling.setAttribute('class', 'column is-1 result-TD-inactive');
+  var LSTU = event.target.id;
+  console.log(LSTU);
+  
+}
+function thumbsDown(event) {
+  if (!event.target.classList.contains('result-TD-inactive') === true) return null;
+  event.target.setAttribute('class', 'column is-1 result-TD-active');
+  event.target.previousElementSibling.setAttribute('class', 'column is-1 result-TU-inactive');
+  var LSTD = event.target.id;
+  console.log(LSTD);
+  console.log(event.target.previousElementSibling.id)
+
+}
+
+
 // event listeners and startup functions
 gottaGo.addEventListener('click', centerMap);
 searchButton.addEventListener('click', captureFormData);
+docRecent.addEventListener('click', thumbsUp);
+docRecent.addEventListener('click', thumbsDown);
 window.initMap = initMap;
 poopJokesButton();
 // this only is here for testing purposes.
