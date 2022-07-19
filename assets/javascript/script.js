@@ -41,13 +41,12 @@ function appendData(input) {
     createThumbsUp.textContent = String.fromCodePoint(0x1F44D);
     createThumbsDown.textContent = String.fromCodePoint(0x1F44E);
     // creates card and assigns styling
-    createCard.setAttribute('class', 'columns is-vcentered result result' + (i + 1))
+    createCard.setAttribute('class', 'columns is-vcentered result result' + (i + 1));
     //creates card and assigns card ID for CSS
     createCard.setAttribute('id', 'result' + (i + 1));
     // creates card text content and assign styling
     createCard.appendChild(createCardTextDiv);
-    createCardTextDiv.setAttribute('class', 'column is-10 result-text-area result' + (i + 1))
-    createCardTextDiv.setAttribute('id', 'result' + (i + 1));
+    createCardTextDiv.setAttribute('class', 'column is-10 result-text-area result' + (i + 1));
     createCardTextDiv.appendChild(createCardName);
     createCardTextDiv.appendChild(createCardLocation);
     createCardTextDiv.appendChild(createCardRating);
