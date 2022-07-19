@@ -1,4 +1,4 @@
-let map, infoWindow, zoomy;
+let map, infoWindow;
 var searchForm = document.querySelector("#search")
 var gottaGo = document.querySelector('#custom-map-control-button');
 var searchButton = document.querySelector('#searchbox');
