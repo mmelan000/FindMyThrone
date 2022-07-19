@@ -9,10 +9,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Fira+Code&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/0586516412.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./assets/css/style.css">
@@ -28,14 +24,15 @@
             <!--Search bar-->
             <div class="column is-half">
                 <div class="field">
-                    <p class="control has-icons-left has-icons-right">
-                        <input class="input" id="search" type="text" placeholder="3451 Walnut Street Philadelphia, PA 19104">
-                        <button class="button is-normal" id="custom-map-control-button">I gotta go!</button>
+                    <form class="control has-icons-left has-icons-right">
+                        <input class="input" id="search" type="text"
+                            placeholder="3451 Walnut Street Philadelphia, PA 19104">
                         <button class="button is-normal" id="searchbox">Search</button>
+                        <button class="button is-normal" id="custom-map-control-button">I gotta go!</button>
                         <span class="icon is-small is-left">
                             <i class="fa-solid fa-toilet"></i>
                         </span>
-                    </p>
+                    </form>
                 </div>
                 <div id="map"></div>
                 <div class="container">
