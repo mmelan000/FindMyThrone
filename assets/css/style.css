@@ -71,19 +71,22 @@ h1 {
     text-align: left;
 }
 
-.result > * {
+.result>* {
     background-color: transparent;
 }
 
 .result-TU-inactive {
     filter: grayscale(100%);
 }
+
 .result-TD-inactive {
     filter: grayscale(100%);
 }
+
 .result-TU-active {
     filter: hue-rotate(90deg);
 }
+
 .result-TD-active {
     filter: hue-rotate(270deg);
 }
@@ -112,18 +115,22 @@ h1 {
     background-color: var(--resultText);
     color: var(--result1bg);
 }
+
 .result2:hover {
     background-color: var(--resultText);
     color: var(--result2bg);
 }
+
 .result3:hover {
     background-color: var(--resultText);
     color: var(--result3bg);
 }
+
 .result4:hover {
     background-color: var(--resultText);
     color: var(--result4bg);
 }
+
 .result5:hover {
     background-color: var(--resultText);
     color: var(--result5bg);

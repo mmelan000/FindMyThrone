@@ -23,8 +23,8 @@ function renderLS(thumbsUpID) {
   };
 }
 // sets zoom distance based on furthest bathroom
-function zoomMap (input) {
-  map.setZoom(16-input);
+function zoomMap(input) {
+  map.setZoom(16 - input);
 }
 // adds map markers
 function mapMarkers(latitude, longitude) {
@@ -120,7 +120,8 @@ function centerMap(pos) {
   map.setCenter(pos);
 }
 // centers map and calls getRestoomAPI
-function geoLocate() {
+function geoLocate(event) {
+  event.preventDefault()
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(
       (position) => {
@@ -167,7 +168,8 @@ function getLocation(zip) {
     })
 }
 // pulls form data
-function captureFormData() {
+function captureFormData(event) {
+  event.preventDefault();
   var formdata = searchForm.value;
   getLocation(formdata);
 }
