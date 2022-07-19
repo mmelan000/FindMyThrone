@@ -19,11 +19,11 @@ function appendData(input) {
     console.log(input[i]);
     var createCard = document.createElement('div');
     var createCardTextDiv = document.createElement('div');
-    var createCardName = document.createElement('h3');
+    var createCardName = document.createElement('p');
     var createCardLocation = document.createElement('p');
     var createCardRating = document.createElement('p');
-    var createThumbsUp = document.createElement("h4");
-    var createThumbsDown = document.createElement("h4");
+    var createThumbsUp = document.createElement('p');
+    var createThumbsDown = document.createElement('p');
     var ratingTotal = input[i].upvote + input[i].downvote;
     var rating = input[i].upvote / ratingTotal;
 
@@ -42,6 +42,8 @@ function appendData(input) {
     createThumbsDown.textContent = String.fromCodePoint(0x1F44E);
     // creates card and assigns styling
     createCard.setAttribute('class', 'columns is-vcentered result result' + (i + 1))
+    //creates card and assigns card ID for CSS
+    createCard.setAttribute('id', 'result' + (i + 1));
     // creates card text content and assign styling
     createCard.appendChild(createCardTextDiv);
     createCardTextDiv.setAttribute('class', 'column is-10 result-text-area result' + (i + 1))
