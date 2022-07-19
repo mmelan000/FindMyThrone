@@ -11,6 +11,18 @@ var poopJokesArray = ['Bake a loaf', 'Barbarians at the gate', 'Blow Mud', 'Bomb
   'Drop some potatoes in the crock pot', 'Craft a fudge pop', 'Release the Kraken', 'Get something down on paper', 'A brown dog is scratching at the back door', 'Liberate the brown trout',
   'Let the turtles loose', 'Make underwater sculptures', 'Glassing the surface', 'Unload some timber', 'Plant a tree']
 
+
+function renderLS(thumbsUpID) {
+  if (localStorage.getItem(thumbsUpID) === null) return null;
+  if (localStorage.getItem(thumbsUpID) === 'true') {
+    document.querySelector('#' + thumbsUpID).setAttribute('class', 'column is-1 result-TU-active');
+    document.querySelector('#' + thumbsUpID).nextElementSibling.setAttribute('class', 'column is-1 result-TD-inactive')
+  } else {
+    document.querySelector('#' + thumbsUpID).setAttribute('class', 'column is-1 result-TU-inactive');
+    document.querySelector('#' + thumbsUpID).nextElementSibling.setAttribute('class', 'column is-1 result-TD-active')
+  };
+}
+
 // appends api call into cards
 function appendData(input) {
   docRecent.innerHTML = '';
@@ -47,25 +59,26 @@ function appendData(input) {
     // creates card text content and assign styling
     createCard.appendChild(createCardTextDiv);
     createCardTextDiv.setAttribute('class', 'column is-10 result-text-area'
-    //  result' + (i + 1)
-     );
+      //  result' + (i + 1)
+    );
     createCardTextDiv.appendChild(createCardName);
     createCardTextDiv.appendChild(createCardLocation);
     createCardTextDiv.appendChild(createCardRating);
     // creates thumbs up and assigns styling and unique ID
     createCard.appendChild(createThumbsUp);
     createThumbsUp.setAttribute('class', 'column is-1 result-TU-inactive'
-    //  result' + (i + 1)
-     )
+      //  result' + (i + 1)
+    )
     createThumbsUp.setAttribute('id', 'TU' + input[i].id);
     // creates thumbs down and assigns styling and unique ID
     createCard.appendChild(createThumbsDown);
     createThumbsDown.setAttribute('class', 'column is-1 result-TD-inactive'
-    //  result' + (i + 1)
-     )
+      //  result' + (i + 1)
+    )
     createThumbsDown.setAttribute('id', 'TD' + input[i].id);
     // appends card to page
     docRecent.appendChild(createCard);
+    renderLS('TU' + input[i].id, 'TD' + input[i].id);
   }
 }
 // calls restroom API data
@@ -167,27 +180,22 @@ function captureFormData() {
   var formdata = searchForm.value;
   identifyLocationType(formdata);
 }
-
-
+// activates thumbs up and deactivates thumbs down, updates LS
 function thumbsUp(event) {
   if (!event.target.classList.contains('result-TU-inactive') === true) return null;
   event.target.setAttribute('class', 'column is-1 result-TU-active');
   event.target.nextElementSibling.setAttribute('class', 'column is-1 result-TD-inactive');
-  var LSTU = event.target.id;
-  console.log(LSTU);
-  
+  localStorage.setItem(event.target.id, true);
+  localStorage.setItem(event.target.nextElementSibling.id, false);
 }
+// activates thumbs down and deactivates thumbs up, updates LS
 function thumbsDown(event) {
   if (!event.target.classList.contains('result-TD-inactive') === true) return null;
   event.target.setAttribute('class', 'column is-1 result-TD-active');
   event.target.previousElementSibling.setAttribute('class', 'column is-1 result-TU-inactive');
-  var LSTD = event.target.id;
-  console.log(LSTD);
-  console.log(event.target.previousElementSibling.id)
-
+  localStorage.setItem(event.target.id, true);
+  localStorage.setItem(event.target.previousElementSibling.id, false);
 }
-
-
 // event listeners and startup functions
 gottaGo.addEventListener('click', centerMap);
 searchButton.addEventListener('click', captureFormData);
