@@ -47,6 +47,11 @@ h1 {
     font-weight: 700;
 }
 
+.card-name {
+    font-weight: 300;
+}
+
+
 .custom-map-control-button {
     background-color: #fff;
     border: 0;
