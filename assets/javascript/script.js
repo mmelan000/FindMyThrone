@@ -23,10 +23,6 @@ function renderLS(thumbsUpID) {
     document.querySelector('#' + thumbsUpID).nextElementSibling.setAttribute('class', 'column is-1 result-TD-active')
   };
 }
-// sets zoom distance based on furthest bathroom
-function zoomMap(input) {
-  map.setZoom(16 - input);
-}
 // adds map markers
 function mapMarkers(latitude, longitude) {
   var locCoords = { lat: latitude, lng: longitude };
@@ -95,6 +91,17 @@ function appendData(input) {
     renderLS('TU' + input[i].id, 'TD' + input[i].id);
   }
 }
+// sets zoom distance based on furthest bathroom
+function zoomMap(input) {
+  map.setZoom(16 - input);
+}
+// centers the map based on fed coords
+function centerMap(pos) {
+  infoWindow.setPosition(pos);
+  infoWindow.setContent("Location found.");
+  infoWindow.open(map);
+  map.setCenter(pos);
+}
 // calls restroom API data
 function getRestroomAPI(input) {
   fetch('https://www.refugerestrooms.org/api/v1/restrooms/by_location?page=1&per_page=5&offset=0&lat=' + input.lat + '&lng=' + input.lng)
@@ -107,21 +114,15 @@ function getRestroomAPI(input) {
       zoomMap(data[4].distance);
     })
 }
-// loads map and calls location of first public bathroom
-function initMap() {
-  map = new google.maps.Map(document.getElementById("map"), {
-    center: { lat: 51.4197, lng: 0.0831 },
-    zoom: 12,
-  });
-  infoWindow = new google.maps.InfoWindow();
-  mapMarkers(51.4197, 0.0831);
-}
-// centers the map based on fed coords
-function centerMap(pos) {
+// issues error for failed geolocation
+function handleLocationError(browserHasGeolocation, infoWindow, pos) {
   infoWindow.setPosition(pos);
-  infoWindow.setContent("Location found.");
+  infoWindow.setContent(
+    browserHasGeolocation
+      ? "Error: The Geolocation service failed."
+      : "Error: Your browser doesn't support geolocation."
+  );
   infoWindow.open(map);
-  map.setCenter(pos);
 }
 // centers map and calls getRestoomAPI
 function geoLocate(event) {
@@ -142,20 +143,6 @@ function geoLocate(event) {
   } else {
     handleLocationError(false, infoWindow, map.getCenter());
   }
-}
-// issues error for failed geolocation
-function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-  infoWindow.setPosition(pos);
-  infoWindow.setContent(
-    browserHasGeolocation
-      ? "Error: The Geolocation service failed."
-      : "Error: Your browser doesn't support geolocation."
-  );
-  infoWindow.open(map);
-}
-// give random pun to near me button
-function poopJokesButton() {
-  gottaGo.textContent = poopJokesArray[Math.floor(Math.random() * poopJokesArray.length)];
 }
 // processes fetch by form
 function getLocation(zip) {
@@ -180,6 +167,19 @@ function captureFormData(event) {
   event.preventDefault();
   var formdata = searchForm.value;
   getLocation(formdata);
+}
+// loads map and calls location of first public bathroom
+function initMap() {
+  map = new google.maps.Map(document.getElementById("map"), {
+    center: { lat: 51.4197, lng: 0.0831 },
+    zoom: 12,
+  });
+  infoWindow = new google.maps.InfoWindow();
+  mapMarkers(51.4197, 0.0831);
+}
+// give random pun to near me button
+function poopJokesButton() {
+  gottaGo.textContent = poopJokesArray[Math.floor(Math.random() * poopJokesArray.length)];
 }
 // activates thumbs up and deactivates thumbs down, updates LS
 function thumbsUp(event) {
