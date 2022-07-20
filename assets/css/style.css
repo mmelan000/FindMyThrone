@@ -29,6 +29,14 @@ h1 {
 #page {
     margin-top: 15px;
 }
+#error {
+    color: red;
+    font-size: 10px;
+    text-align: left;
+}
+.hidden {
+    display: none;
+}
 
 .column {
     background-color: burlywood;

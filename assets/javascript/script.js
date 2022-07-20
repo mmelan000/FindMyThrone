@@ -1,5 +1,6 @@
 let map, infoWindow;
-var searchForm = document.querySelector("#search")
+var formError = document.querySelector('#error');
+var searchForm = document.querySelector("#search");
 var gottaGo = document.querySelector('#custom-map-control-button');
 var searchButton = document.querySelector('#searchbox');
 var docRecent = document.querySelector('#recent');
@@ -167,11 +168,15 @@ function getLocation(zip) {
       return response.json();
     })
     .then(function (data) {
+      formError.setAttribute('class', 'hidden');
       var posArray = {
         lat: data.results[0].geometry.location.lat,
         lng: data.results[0].geometry.location.lng,
       };
       getRestroomAPI(posArray);
+    })
+    .catch(function(){
+      formError.setAttribute('class', 'shown');
     })
 }
 // pulls form data
