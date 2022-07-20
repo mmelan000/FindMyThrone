@@ -52,7 +52,7 @@ function appendData(input) {
 
     mapMarkers(input[i].latitude, input[i].longitude);
 
-    createCardName.textContent = input[i].name;
+    createCardName.textContent = input[i].name.toUpperCase();
     createCardName.setAttribute('class', 'card-name');
     createCardLocation.textContent = input[i].street + ', ' + input[i].city;
     createCardLocation.setAttribute('class', 'card-location');
