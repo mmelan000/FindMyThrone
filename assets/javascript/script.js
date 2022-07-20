@@ -54,7 +54,7 @@ function appendData(input) {
 
     createCardName.textContent = input[i].name.toUpperCase();
     createCardName.setAttribute('class', 'card-name');
-    createCardLocation.textContent = input[i].street + ', ' + input[i].city;
+    createCardLocation.textContent = input[i].street;
     createCardLocation.setAttribute('class', 'card-location');
     if (rating === 0) {
       createCardRating.textContent = 'Rating: 0%';
@@ -67,7 +67,7 @@ function appendData(input) {
     createThumbsUp.textContent = String.fromCodePoint(0x1F44D);
     createThumbsDown.textContent = String.fromCodePoint(0x1F44E);
     // creates card and assigns styling
-    createCard.setAttribute('class', 'columns is-vcentered result result' + (i + 1));
+    createCard.setAttribute('class', 'columns is-vcentered is-multiline is-mobile result result' + (i + 1));
     //creates card and assigns card ID for CSS
     createCard.setAttribute('id', 'result' + (i + 1));
     // creates card text content and assign styling

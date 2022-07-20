@@ -184,3 +184,14 @@ h1 {
     padding-top: 10px;
     color: white;
 }
+
+@media screen and (max-width: 768px) {
+    .result {
+      width: 101%;
+      border-radius: 0px;
+      box-shadow: none;
+    }
+    /* .columns {
+        margin-right: -1.25rem;
+    } */
+  }
