@@ -52,8 +52,10 @@ function appendData(input) {
 
     mapMarkers(input[i].latitude, input[i].longitude);
 
-    createCardName.textContent = 'Name: ' + input[i].name;
-    createCardLocation.textContent = 'Location: ' + input[i].street + ', ' + input[i].city;
+    createCardName.textContent = input[i].name;
+    createCardName.setAttribute('class', 'card-name');
+    createCardLocation.textContent = input[i].street + ', ' + input[i].city;
+    createCardLocation.setAttribute('class', 'card-location');
     if (rating === 0) {
       createCardRating.textContent = 'Rating: 0%';
     } else if (!rating) {
@@ -61,6 +63,7 @@ function appendData(input) {
     } else {
       createCardRating.textContent = 'Rating: ' + rating * 100 + '%';
     }
+    createCardRating.setAttribute('class', 'card-rating');
     createThumbsUp.textContent = String.fromCodePoint(0x1F44D);
     createThumbsDown.textContent = String.fromCodePoint(0x1F44E);
     // creates card and assigns styling
@@ -69,7 +72,7 @@ function appendData(input) {
     createCard.setAttribute('id', 'result' + (i + 1));
     // creates card text content and assign styling
     createCard.appendChild(createCardTextDiv);
-    createCardTextDiv.setAttribute('class', 'column is-10 result-text-area'
+    createCardTextDiv.setAttribute('class', 'column result-text-area'
       //  result' + (i + 1)
     );
     createCardTextDiv.appendChild(createCardName);
