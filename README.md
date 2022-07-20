@@ -1,14 +1,60 @@
-# marvelous-breakfast-squad
-https://github.com/Ajalloh1
-https://github.com/mmelan000
-https://github.com/FWinkler3
-https://github.com/Jesse115
-# FindMy Throne
-FindMy Throne is a simple and easy to use free app that allows you to find a public 
-Rest Room in any city in the world.
-## Usage
-The usage of FindMy Throne can not be over enphasized as this app helps not only tourists and or strangers find a public rest room, but also locals who find themselve in need of a rest room while a way from home, whether they are at a park or stores.
+# FindMyThrone
 
-## Contributing
-User feedbacks are highly welcome and encouraged. Although we have some major Upgrades and improvement plans on the horizon, any feedback and improvement suggestion will highly be appreciated. 
-## License
+An application that will utilize the Google Maps APi and RefugeRestroom together to display a map and list of nearby public bathrooms. It will also allow for the ability to upvote and downvote locations.
+
+**User Story**
+```
+AS A traveler
+I WANT to see nearby bathrooms
+SO THAT I can plan a trip to the bathroom accordingly
+```
+
+**Acceptance Criteria**
+```
+GIVEN a map display with form inputs
+WHEN I search for a location
+THEN I am presented with a list of the closest five public restrooms and a map of the area
+WHEN I view the bathroom locations
+THEN I am presented with the name, location, current rating, and icons to up or downvote the location.
+WHEN I upvote or downvote a location
+THEN I am presented with a color that indicates my selection
+WHEN I view places I have viewed before
+THEN I am presented with my voting history
+```
+
+---
+
+## Authors
+
+- [@Michael Melanson](https://github.com/mmelan000)
+- [@Frank Winkler](https://github.com/FWinkler3)
+- [@Jesse Ashford](https://github.com/Jesse115)
+- [@Ahmadu Jalloh](https://github.com/Ajalloh1)
+
+---
+
+## Screenshots
+
+**Landing Page**
+![App Screenshot](./assets/images/appSS1.jpg)
+**Search By Address**
+![App Screenshot](./assets/images/appSS2.jpg)
+**Search By GeoLocation**
+![App Screenshot](./assets/images/appSS3.jpg)
+
+---
+
+## Optimizations
+
+- Supports multiple search types.
+- Mobile friendly.
+- Stores users up and down votes.
+- GeoLocate button for nearby bathrooms.
+
+---
+
+## Deployment
+
+https://mmelan000.github.io/marvelous-breakfast-squad/
+
+---
