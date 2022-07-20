@@ -145,8 +145,8 @@ function geoLocate(event) {
   }
 }
 // processes fetch by form
-function getLocation(zip) {
-  fetch('https://maps.googleapis.com/maps/api/geocode/json?address=' + zip + '&key=AIzaSyCYtyNqtzqQ6Ni4aB_yASKG_uXHa0_amuE')
+function getLocation(input) {
+  fetch('https://maps.googleapis.com/maps/api/geocode/json?address=' + input + '&key=AIzaSyCYtyNqtzqQ6Ni4aB_yASKG_uXHa0_amuE')
     .then(function (response) {
       return response.json();
     })
