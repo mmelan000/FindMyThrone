@@ -41,6 +41,8 @@ THEN I am presented with my voting history
 ![App Screenshot](./assets/images/appSS2.jpg)
 **Search By GeoLocation**
 ![App Screenshot](./assets/images/appSS3.jpg)
+**Mobile View**
+![App Screenshot](./assets/images/mobileSS1.jpg)
 
 ---
 
