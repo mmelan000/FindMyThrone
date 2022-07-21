@@ -36,13 +36,32 @@ THEN I am presented with my voting history
 ## Screenshots
 
 **Landing Page**
+
 ![App Screenshot](./assets/images/appSS1.jpg)
+
 **Search By Address**
+
 ![App Screenshot](./assets/images/appSS2.jpg)
+
 **Search By GeoLocation**
+
 ![App Screenshot](./assets/images/appSS3.jpg)
+
 **Mobile View**
+
 ![App Screenshot](./assets/images/mobileSS1.jpg)
+
+---
+
+## Technology
+
+ - HTML
+ - CSS
+ - JavaScript
+ - Bulma
+ - Google Maps
+ - Google Maps API
+ - Refuge Restroom API
 
 ---
 
