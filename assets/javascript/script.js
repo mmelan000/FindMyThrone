@@ -151,7 +151,6 @@ function getLocation(input) {
       return response.json();
     })
     .then(function (data) {
-      formError.setAttribute('class', 'hidden');
       var posArray = {
         lat: data.results[0].geometry.location.lat,
         lng: data.results[0].geometry.location.lng,
@@ -159,7 +158,7 @@ function getLocation(input) {
       getRestroomAPI(posArray);
     })
     .catch(function(){
-      formError.setAttribute('class', 'shown');
+      openModal();
     })
 }
 // pulls form data
@@ -197,10 +196,34 @@ function thumbsDown(event) {
   localStorage.setItem(event.target.id, true);
   localStorage.setItem(event.target.previousElementSibling.id, false);
 }
+// opens modal
+function openModal() {
+  formError.classList.add('is-active');
+}
+// closes modal
+function closeModal() {
+  formError.classList.remove('is-active');
+}
 // event listeners and startup functions
 gottaGo.addEventListener('click', geoLocate);
 searchButton.addEventListener('click', captureFormData);
 docRecent.addEventListener('click', thumbsUp);
 docRecent.addEventListener('click', thumbsDown);
+// Add a click event on various child elements to close the parent modal
+(document.querySelectorAll('.modal-background, .modal-close, .modal-card-head .delete, .modal-card-foot .button') || []).forEach(($close) => {
+  const $target = $close.closest('.modal');
+
+  $close.addEventListener('click', () => {
+    closeModal($target);
+  });
+});
+// Add a keyboard event to close all modals
+document.addEventListener('keydown', (event) => {
+  const e = event || window.event;
+
+  if (e.keyCode === 27) { // Escape key
+    closeModal();
+  }
+});
 window.initMap = initMap;
 poopJokesButton();

@@ -21,40 +21,50 @@
             <h1 class="column is-half is-size-2" id="find-throne">FindMyThrone</h1>
         </header>
         <section class="columns is-centered has-text-centered">
-            <!--Search bar-->
             <div class="column is-half">
-                <div class="field">
+                <section class="field">
                     <form class="control has-icons-left has-icons-right">
                         <input class="input" id="search" type="text"
                             placeholder="3451 Walnut Street Philadelphia, PA 19104">
-                            <p class="hidden" id="error">*Please enter a valid address.</p>
+                            
                         <button class="button is-normal" id="searchbox">Search</button>
                         <button class="button is-normal" id="custom-map-control-button">I gotta go!</button>
                         <span class="icon is-small is-left">
                             <i class="fa-solid fa-toilet"></i>
                         </span>
                     </form>
-                </div>
+                </section>
                 <div id="map"></div>
-                <div class="container">
+                <section class="container">
                     <p id="local">Local Loos:</p>
                     <div class="columns is-multiline is-centered" id="recent"></div>
-                </div>
+                </section>
             </div>
         </section>
         <footer class="columns is-centered has-text-centered">
             <div class="column is-half">
                 <p id="theSquad">Thanks for using the app!</p>
-                <a href>The Marvelous Breakfast Squad</a>
+                <a href="https://github.com/mmelan000/marvelous-breakfast-squad">The Marvelous Breakfast Squad</a>
             </div>
         </footer>
     </main>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYtyNqtzqQ6Ni4aB_yASKG_uXHa0_amuE&callback=initMap&v=weekly"
-        defer></script>
-    <script src="./assets/javascript/script.js"></script>
+
+    <div class="modal" id="error">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+          <div class="box">
+            <p>Please enter a valid location.</p>
+          </div>
+        </div>
+        <button class="modal-close is-large" aria-label="close"></button>
+      </div>
+
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYtyNqtzqQ6Ni4aB_yASKG_uXHa0_amuE&callback=initMap&v=weekly"
+      defer></script>
+  <script src="./assets/javascript/script.js"></script>
 </body>
 
 </html>
