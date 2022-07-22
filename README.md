@@ -76,6 +76,6 @@ THEN I am presented with my voting history
 
 ## Deployment
 
-https://mmelan000.github.io/marvelous-breakfast-squad/
+https://mmelan000.github.io/FindMyThrone/
 
 ---
